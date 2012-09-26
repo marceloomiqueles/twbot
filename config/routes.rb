@@ -1,4 +1,9 @@
 Twbot::Application.routes.draw do
+  root to: 'bots#index'
+
+  match '/bot/nuevo' => 'bots#nuevo', :as => '/bot/nuevo', :via => :get
+  match '/bot/nuevo' => 'bots#guardar', :as => '/bot/nuevo', :via => :post
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
