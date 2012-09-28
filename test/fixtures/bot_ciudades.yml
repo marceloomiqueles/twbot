@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  bot_id: 1
+  ciudad_id: 1
+
+two:
+  bot_id: 1
+  ciudad_id: 1

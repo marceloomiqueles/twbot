@@ -1,8 +1,24 @@
-Twbot::Application.routes.draw do
+  Twbot::Application.routes.draw do
   root to: 'bots#index'
 
   match '/bot/nuevo' => 'bots#nuevo', :as => '/bot/nuevo', :via => :get
   match '/bot/nuevo' => 'bots#guardar', :as => '/bot/nuevo', :via => :post
+  match '/bot/eliminar/:id' => 'bots#eliminar', :as => '/bot/eliminar'
+
+  match '/bot/:id/palabras' => 'bots#palabras', :as => '/bot/palabras'
+  match '/bot/:id/palabras/agregar' => 'bots#agregar_palabra', :as => '/bot/agregar/palabra', :via => :get
+  match '/bot/:id/palabras/agregar' => 'bots#guardar_palabra', :as => '/bot/agregar/palabra', :via => :post
+  match '/bot/:id/palabras/eliminar/:palabra_id' => 'bots#eliminar_palabra', :as => '/bot/eliminar/palabra'
+
+  match "/auth/:provider/callback" => "bots#auth"
+  match "/auth/failure" => "bots#fail_auth"
+
+  match "/ciudades" => "ciudades#index"
+  match "/ciudades/nueva" => "ciudades#nueva", :as => '/ciudades/nueva', :via => :get
+  match "/ciudades/nueva" => "ciudades#guardar", :as => '/ciudades/nueva', :via => :post
+  match "/ciudades/editar/:id" => "ciudades#editar", :as => '/ciudades/editar', :via => :get
+  match "/ciudades/editar/:id" => "ciudades#actualizar", :as => '/ciudades/editar', :via => :put
+  match "/ciudades/eliminar/:id" => "ciudades#eliminar", :as => '/ciudades/eliminar'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

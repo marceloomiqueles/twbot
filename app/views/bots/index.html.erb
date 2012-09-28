@@ -1,13 +1,33 @@
 <div class="center hero-unit">
-  <h1>Welcome to the Sample App</h1>
-
-  <h2>
-    This is the home page for the
-    <a href="http://railstutorial.org/">Ruby on Rails Tutorial</a>
-    sample application.
-  </h2>
-
-  <%= link_to "Sign up now!", '#', class: "btn btn-large btn-primary" %>
+  	<h1>Bots en el Sistema</h1>
+	<% if flash[:notice] %>
+      	<p class="notice"><%= flash[:notice] %></p>
+    <% end %>
+    <table>
+    	<tr>
+    		<th>Nombre</th>
+    		<th>Cuenta Twitter</th>
+    		<th>Palabras</th>
+            <th>Se han seguido</th>
+            <th>Han seguido de vuelta</th>
+    		<th>Acciones</th>
+    	</tr>
+    	<% @bots.each do |bot| %>
+	    	<tr>
+	    		<td><%= bot.nombre %></td>
+	    		<td><%= bot.tw_cuenta %></td>
+	    		<td><%= bot.palabras.length %></td>
+                <td><%= bot.siguiendo %></td>
+                <td><%= bot.seguidores %></td>
+	    		<td>
+                    <div class="btn-toolbar">
+                        <div class="btn-group">
+                            <%= link_to "Palabras", bot_palabras_path(bot), class: "btn" %>
+                            <%= link_to "Eliminar", bot_eliminar_path(bot), class: "btn" %>
+                        </div>
+                    </div>
+                </td>
+	    	</tr>
+	    <% end %>
+    </table>
 </div>
-
-<%= link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/' %>
