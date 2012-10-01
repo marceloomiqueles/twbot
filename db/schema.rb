@@ -11,9 +11,9 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120928195058) do
+ActiveRecord::Schema.define(:version => 20120928202119) do
 
-  create_table "bot_ciudades", :force => true do |t|
+  create_table "bot_ciudads", :force => true do |t|
     t.integer  "bot_id"
     t.integer  "ciudad_id"
     t.datetime "created_at", :null => false

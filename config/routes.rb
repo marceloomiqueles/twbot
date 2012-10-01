@@ -10,6 +10,10 @@
   match '/bot/:id/palabras/agregar' => 'bots#guardar_palabra', :as => '/bot/agregar/palabra', :via => :post
   match '/bot/:id/palabras/eliminar/:palabra_id' => 'bots#eliminar_palabra', :as => '/bot/eliminar/palabra'
 
+  match '/bot/:id/ciudades' => 'bots#ciudades', :as => '/bot/ciudades'
+  match '/bot/:id/ciudades/add/:id_ciudad' => 'bots#agregar_ciudad', :as => '/bot/ciudades/add'
+  match '/bot/:id/ciudades/del/:id_botciudad' => 'bots#eliminar_ciudad', :as => '/bot/ciudades/del'
+
   match "/auth/:provider/callback" => "bots#auth"
   match "/auth/failure" => "bots#fail_auth"
 

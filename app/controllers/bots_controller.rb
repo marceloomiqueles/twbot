@@ -1,5 +1,5 @@
 class BotsController < ApplicationController
-  before_filter :recuperar_bot, :only => [:palabras, :agregar_palabra, :eliminar, :guardar_palabra]
+  before_filter :recuperar_bot, :only => [:palabras, :agregar_palabra, :eliminar, :guardar_palabra, :ciudades]
 
   def recuperar_bot
     @bot = Bot.find(params[:id])
@@ -85,5 +85,21 @@ class BotsController < ApplicationController
     @palabra = Palabra.find(params[:palabra_id])
     @palabra.destroy
     redirect_to(bot_palabras_path(params[:id]), :notice => "Palabra Eliminada")
+  end
+
+  # Muestra las ciudades asociadas al bot y disponibles para modificación
+  def ciudades
+    @ciudades = Ciudad.all
+  end
+
+  def agregar_ciudad
+    BotCiudad.create(bot_id: params[:id], ciudad_id: params[:id_ciudad])
+    redirect_to(bot_ciudades_path(params[:id]), notice: "Ciudad Agregada")
+  end
+
+  def eliminar_ciudad
+    @botciudad = BotCiudad.find(params[:id_botciudad])
+    @botciudad.destroy
+    redirect_to(bot_ciudades_path(params[:id]), notice: "Ciudad Eliminada")
   end
 end
