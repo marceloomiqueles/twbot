@@ -14,6 +14,8 @@
   match '/bot/:id/ciudades/add/:id_ciudad' => 'bots#agregar_ciudad', :as => '/bot/ciudades/add'
   match '/bot/:id/ciudades/del/:id_botciudad' => 'bots#eliminar_ciudad', :as => '/bot/ciudades/del'
 
+  match '/bot/:id/tweets' => 'bots#tweets', :as => '/bot/tweets'
+
   match "/auth/:provider/callback" => "bots#auth"
   match "/auth/failure" => "bots#fail_auth"
 

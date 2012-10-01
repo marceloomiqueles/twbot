@@ -1,5 +1,5 @@
 class BotsController < ApplicationController
-  before_filter :recuperar_bot, :only => [:palabras, :agregar_palabra, :eliminar, :guardar_palabra, :ciudades]
+  before_filter :recuperar_bot, :only => [:palabras, :agregar_palabra, :eliminar, :guardar_palabra, :ciudades, :tweets]
 
   def recuperar_bot
     @bot = Bot.find(params[:id])
@@ -92,14 +92,20 @@ class BotsController < ApplicationController
     @ciudades = Ciudad.all
   end
 
+  # Agregar Ciudad al Bot
   def agregar_ciudad
     BotCiudad.create(bot_id: params[:id], ciudad_id: params[:id_ciudad])
     redirect_to(bot_ciudades_path(params[:id]), notice: "Ciudad Agregada")
   end
 
+  # Eliminar Ciudad del Bot
   def eliminar_ciudad
     @botciudad = BotCiudad.find(params[:id_botciudad])
     @botciudad.destroy
     redirect_to(bot_ciudades_path(params[:id]), notice: "Ciudad Eliminada")
+  end
+
+  # Mustra listado de las personas que se han seguido
+  def tweets
   end
 end

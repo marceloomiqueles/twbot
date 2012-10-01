@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  bot_id: 1
+  tw_usuario_id: MyString
+  tw_tweet_id: MyString
+  tw_location: MyString
+  tw_usuario: MyString
+  tw_text: MyString
+  tw_created_at: MyString
+  estado: 1
+
+two:
+  bot_id: 1
+  tw_usuario_id: MyString
+  tw_tweet_id: MyString
+  tw_location: MyString
+  tw_usuario: MyString
+  tw_text: MyString
+  tw_created_at: MyString
+  estado: 1

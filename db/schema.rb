@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120928202119) do
+ActiveRecord::Schema.define(:version => 20121001135406) do
 
   create_table "bot_ciudads", :force => true do |t|
     t.integer  "bot_id"
@@ -46,6 +46,19 @@ ActiveRecord::Schema.define(:version => 20120928202119) do
     t.string   "palabra"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "tweets", :force => true do |t|
+    t.integer  "bot_id"
+    t.string   "tw_usuario_id"
+    t.string   "tw_tweet_id"
+    t.string   "tw_location"
+    t.string   "tw_usuario"
+    t.string   "tw_text"
+    t.string   "tw_created_at"
+    t.integer  "estado"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
 end
