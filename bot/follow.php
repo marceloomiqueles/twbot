@@ -83,7 +83,12 @@ while ($bot = mysql_fetch_assoc($bots)) {
                 if ($ambiente != 0) {
                     echo "Pagina: " . $pagina . "\n";
                 }
-                $buscados = $twitter->search($query_tw_palabra, null, null, 100, $pagina, null, null, $geo, true, null);
+                //$buscados = $twitter->search($query_tw_palabra, null, null, 100, $pagina, null, null, $geo, true, null);
+
+                if ($ambiente != 0) {
+                    echo "Palabra Indice: " . $palabra_indice . "\n";
+                    echo "Query TW: " . $query_tw_palabra . "\n";
+                }
 
                 if (!empty($buscados['results'])) {
                     foreach ($buscados['results'] as $usuarios) {
@@ -188,7 +193,7 @@ while ($bot = mysql_fetch_assoc($bots)) {
                     $seguir = false;
                     break;
                 }
-
+    
                 if ($ambiente != 0) {
                     $log .= "\n";
                 }
@@ -216,6 +221,7 @@ while ($bot = mysql_fetch_assoc($bots)) {
         echo "Cantidad Seguidos: " . $cantidad_seguidos . "\n";
     }
     //mysql_query("UPDATE bots SET siguiendo = $cantidad_seguidos WHERE id = '{$bot['id']}';");
+    mysql_query("UPDATE bots SET palabra_indice = $palabra_indice WHERE id = '{$bot['id']}';");
 }
 
 if ($ambiente != 0) {
