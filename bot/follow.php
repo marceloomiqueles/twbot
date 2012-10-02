@@ -73,7 +73,7 @@ while ($bot = mysql_fetch_assoc($bots)) {
             $recorrido = false;
         }
     
-        $query = $arrayPalabras[$palabra_indice];
+        $query_tw_palabra = $arrayPalabras[$palabra_indice];
         
         $pagina = 1;
         $seguir = true;
@@ -83,7 +83,7 @@ while ($bot = mysql_fetch_assoc($bots)) {
                 if ($ambiente != 0) {
                     echo "Pagina: " . $pagina . "\n";
                 }
-                $buscados = $twitter->search($query, null, null, 100, $pagina, null, null, $geo, true, null);
+                $buscados = $twitter->search($query_tw_palabra, null, null, 100, $pagina, null, null, $geo, true, null);
 
                 if (!empty($buscados['results'])) {
                     foreach ($buscados['results'] as $usuarios) {
@@ -121,7 +121,7 @@ while ($bot = mysql_fetch_assoc($bots)) {
                                         $usuarios['location'] = "";
                                     }
 
-                                    $query_insert = "INSERT INTO tweets (bot_id, tw_usuario_id, estado, tw_tweet_id, tw_location, tw_text, tw_created_at, tw_usuario, created_at, updated_at, palabra) VALUES ('" . $bot['id'] . "', '" . $usuarios['from_user_id'] . "', '0', '" . $usuarios['id'] . "', '" . $usuarios['location'] . "', '" . $usuarios['text'] . "', '" . $usuarios['created_at'] . "', '" . $usuarios['from_user'] . "', '" .  date("Y-m-d H:i:s") . "', '" . date("Y-m-d H:i:s") . "', '$query');";
+                                    $query_insert = "INSERT INTO tweets (bot_id, tw_usuario_id, estado, tw_tweet_id, tw_location, tw_text, tw_created_at, tw_usuario, created_at, updated_at, palabra) VALUES ('" . $bot['id'] . "', '" . $usuarios['from_user_id'] . "', '0', '" . $usuarios['id'] . "', '" . $usuarios['location'] . "', '" . $usuarios['text'] . "', '" . $usuarios['created_at'] . "', '" . $usuarios['from_user'] . "', '" .  date("Y-m-d H:i:s") . "', '" . date("Y-m-d H:i:s") . "', '". $query_tw_palabra ."');";
 
                                     mysql_query($query_insert);
                                     $id = mysql_insert_id();
