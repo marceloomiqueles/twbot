@@ -137,7 +137,13 @@ while ($bot = mysql_fetch_assoc($bots)) {
                                             if ($siguiendo != 1) {
                                                 $twitter->friendshipsCreate($usuarios['from_user_id']);
                                                 mysql_query("UPDATE tweets SET estado = 1 WHERE id = $id");
-                                                $cantidad_seguidos++;
+                                                $qry_cont = mysql_query("SELECT * FROM bots WHERE id = '{$bot['id']}'");
+                                                while ($bot_cont = mysql_fetch_assoc($qry_cont)) {
+                                                    $contador = $bot_cont['siguiendo'];
+                                                }
+                                                $contador++;
+                                                mysql_query("UPDATE bots SET siguiendo = '$contador' WHERE id = '{$bot['id']}'");
+                                                $cantidad_seguidos++
                                                 $encontrados[] = $usuarios;
                                             }
 
@@ -209,7 +215,7 @@ while ($bot = mysql_fetch_assoc($bots)) {
     if ($ambiente != 0) {
         echo "Cantidad Seguidos: " . $cantidad_seguidos . "\n";
     }
-    mysql_query("UPDATE bots SET siguiendo = $cantidad_seguidos WHERE id = '{$bot['id']}';");
+    //mysql_query("UPDATE bots SET siguiendo = $cantidad_seguidos WHERE id = '{$bot['id']}';");
 }
 
 if ($ambiente != 0) {
