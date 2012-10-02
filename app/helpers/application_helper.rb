@@ -1,7 +1,7 @@
 module ApplicationHelper
 	# Return the full title on a per-page basis.
 	def full_title(page_title)
-		base_title = "TW Bot"
+		base_title = "Followkeywords"
 		if page_title.empty?
 			base_title
 		else
