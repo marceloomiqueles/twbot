@@ -121,7 +121,7 @@ while ($bot = mysql_fetch_assoc($bots)) {
                                         $usuarios['location'] = "";
                                     }
 
-                                    $query_insert = "INSERT INTO tweets (bot_id, tw_usuario_id, estado, tw_tweet_id, tw_location, tw_text, tw_created_at, tw_usuario, created_at, updated_at) VALUES ('" . $bot['id'] . "', '" . $usuarios['from_user_id'] . "', '0', '" . $usuarios['id'] . "', '" . $usuarios['location'] . "', '" . $usuarios['text'] . "', '" . $usuarios['created_at'] . "', '" . $usuarios['from_user'] . "', '" .  date("Y-m-d H:i:s") . "', '" . date("Y-m-d H:i:s") . "');";
+                                    $query_insert = "INSERT INTO tweets (bot_id, tw_usuario_id, estado, tw_tweet_id, tw_location, tw_text, tw_created_at, tw_usuario, created_at, updated_at, palabra) VALUES ('" . $bot['id'] . "', '" . $usuarios['from_user_id'] . "', '0', '" . $usuarios['id'] . "', '" . $usuarios['location'] . "', '" . $usuarios['text'] . "', '" . $usuarios['created_at'] . "', '" . $usuarios['from_user'] . "', '" .  date("Y-m-d H:i:s") . "', '" . date("Y-m-d H:i:s") . "', '$query');";
 
                                     mysql_query($query_insert);
                                     $id = mysql_insert_id();
@@ -143,7 +143,7 @@ while ($bot = mysql_fetch_assoc($bots)) {
                                                 }
                                                 $contador++;
                                                 mysql_query("UPDATE bots SET siguiendo = '$contador' WHERE id = '{$bot['id']}'");
-                                                $cantidad_seguidos++
+                                                $cantidad_seguidos++;
                                                 $encontrados[] = $usuarios;
                                             }
 

@@ -1,6 +1,7 @@
 class BotsController < ApplicationController
   before_filter :recuperar_bot, :only => [:palabras, :agregar_palabra, :eliminar, :guardar_palabra, :ciudades, :tweets]
 
+  # Recupera bot según parametro de url
   def recuperar_bot
     @bot = Bot.find(params[:id])
   end

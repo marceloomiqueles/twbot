@@ -4,6 +4,7 @@
   match '/bot/nuevo' => 'bots#nuevo', :as => '/bot/nuevo', :via => :get
   match '/bot/nuevo' => 'bots#guardar', :as => '/bot/nuevo', :via => :post
   match '/bot/eliminar/:id' => 'bots#eliminar', :as => '/bot/eliminar'
+  match '/bot/login' => 'bots#login', :as => '/bot/login', :via => :post
 
   match '/bot/:id/palabras' => 'bots#palabras', :as => '/bot/palabras'
   match '/bot/:id/palabras/agregar' => 'bots#agregar_palabra', :as => '/bot/agregar/palabra', :via => :get

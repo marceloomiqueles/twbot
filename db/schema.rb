@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121001171727) do
+ActiveRecord::Schema.define(:version => 20121002193240) do
 
   create_table "bot_ciudads", :force => true do |t|
     t.integer  "bot_id"
@@ -62,6 +62,15 @@ ActiveRecord::Schema.define(:version => 20121001171727) do
     t.integer  "estado"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
+    t.string   "palabra"
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+    t.string   "password_digest"
   end
 
 end
