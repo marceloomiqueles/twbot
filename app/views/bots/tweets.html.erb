@@ -19,7 +19,7 @@
             <th>Estado</th>
             <th>Acciones</th>
     	</tr>
-	    <% @bot.tweets.reverse.each do |tweet| %>
+	    <% @bot.tweets.sort! {|a,b| a.created_at <=> b.created_at}.reverse.each do |tweet| %>
 	    	<tr>
 	    		<td><%= tweet.tw_usuario %></td>
                 <td><%= tweet.tw_text %></td>
