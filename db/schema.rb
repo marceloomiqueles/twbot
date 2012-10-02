@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121001135406) do
+ActiveRecord::Schema.define(:version => 20121001171727) do
 
   create_table "bot_ciudads", :force => true do |t|
     t.integer  "bot_id"
@@ -26,10 +26,13 @@ ActiveRecord::Schema.define(:version => 20121001135406) do
     t.string   "tw_token"
     t.string   "tw_secret"
     t.integer  "estado"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
     t.integer  "siguiendo"
     t.integer  "seguidores"
+    t.integer  "palabra_indice"
+    t.integer  "palabra_maximo"
+    t.integer  "ciudad_indice"
   end
 
   create_table "ciudads", :force => true do |t|

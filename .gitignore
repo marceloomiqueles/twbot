@@ -25,3 +25,4 @@ doc/
 # Archivos producción
 .rvmrc*
 setup_load_paths.rb
+ambiente.php

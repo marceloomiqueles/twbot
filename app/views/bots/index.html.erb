@@ -16,7 +16,7 @@
     	<% @bots.each do |bot| %>
 	    	<tr>
 	    		<td><%= bot.nombre %></td>
-	    		<td><%= bot.tw_cuenta %></td>
+	    		<td><%= link_to "@"+bot.tw_cuenta, "http://twitter.com/"+bot.tw_cuenta %></td>
 	    		<td><%= bot.palabras.length %></td>
                 <td><%= bot.botCiudads.length %></td>
                 <td><%= bot.siguiendo %></td>
