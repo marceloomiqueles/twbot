@@ -5,7 +5,7 @@ include('twitter.php');
 
 $twitter = new Twitter($key, $secret);
 
-$bots = mysql_query("SELECT * FROM bots");
+$bots = mysql_query("SELECT * FROM bots WHERE estado = 1");
 $log = '';
 
 while ($bot = mysql_fetch_assoc($bots)) {
