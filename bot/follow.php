@@ -170,7 +170,7 @@ while ($bot = mysql_fetch_assoc($bots)) {
                                                     $seguir = false;
                                                     $recorrido = false;
                                                     if ($ambiente != 0) {
-                                                        $log .= "---------------------------------\nFINALIZA POR MAXIMO\n---------------------------------\n";
+                                                        $log .= "---------------------------------\nFINALIZA POR MAXIMO\n";
                                                     }
                                                 }
                                                 if ($ambiente != 0) {
@@ -184,6 +184,13 @@ while ($bot = mysql_fetch_assoc($bots)) {
 
                                         } else {
                                             mysql_query("UPDATE tweets SET estado = 2 WHERE id = $id");
+                                            if ($ambiente != 0) {
+                                                $log .= "---------------------------------\nYa está siguiendo la cuenta\n";
+                                                $log .= "---------------------------------\n";
+                                                $log .= "Cantidad a seguir: " . $cantidad_seguir . "\n";
+                                                $log .= "Maximo a seguir: " . $max_seguir . "\n";
+                                                $log .= "---------------------------------\n";
+                                            }
                                         }
                                     } catch (Exception $e) {
                                         if ($e->getMessage() == 'You do not have permission to retrieve following status for both specified users.') {
