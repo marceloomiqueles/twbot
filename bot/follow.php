@@ -22,7 +22,7 @@ while ($bot = mysql_fetch_assoc($bots)) {
     $palabra_indice = $bot['palabra_indice'];
     $cantidad_seguidos = $bot['siguiendo'];
 
-    $palabras = mysql_query("SELECT * FROM palabras WHERE bot_id = '{$bot['id']}'");
+    $palabras = mysql_query("SELECT * FROM palabras WHERE bot_id = '{$bot['id']}' and estado = 1");
 
     $arrayPalabras = array();
     $index = 1;
