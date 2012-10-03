@@ -6,7 +6,7 @@ require('ambiente.php');
 include('twitter.php');
 
 if ($ambiente != 0) {
-    $log = date("D, d/m/Y, H:i:s")."\n";
+    $log .= date("D, d/m/Y, H:i:s")."\n";
 }
 
 $twitter = new Twitter($key, $secret);
@@ -33,7 +33,9 @@ while ($bot = mysql_fetch_assoc($bots)) {
     $cantidad_palabras = count($arrayPalabras);
     mysql_query("UPDATE bots SET palabra_maximo = $cantidad_palabras WHERE id = '{$bot['id']}';");
     if ($ambiente != 0) {
-        print_r($arrayPalabras);
+        $log .= "---------------------------\nPalabras\n";
+        $log .= print_r($arrayPalabras, true);
+        $log .= "\n";
     }
 
     $ciudades = mysql_query("SELECT * FROM ciudads AS ciu JOIN bot_ciudads AS bot ON ciu.id = bot.ciudad_id WHERE bot.bot_id = '{$bot['id']}';");
@@ -47,6 +49,11 @@ while ($bot = mysql_fetch_assoc($bots)) {
         $arrayCiudades[$index]['km'] = $ciudad['km'];
         $index ++;
     }
+    if ($ambiente != 0) {
+        $log .= "---------------------------\Ciudades:\n";
+        $log .= print_r($arrayCiudades, true);
+        $log .= "\n";
+    }
     $cantidad_ciudades = count($arrayCiudades);
 
     if ($ciudad_indice >= $cantidad_ciudades) {
@@ -59,7 +66,8 @@ while ($bot = mysql_fetch_assoc($bots)) {
 
     $geo = $arrayCiudades[$ciudad_indice]['longitud']. ',' .$arrayCiudades[$ciudad_indice]['latitud']. ',' .$arrayCiudades[$ciudad_indice]['km'] . 'km';
     if ($ambiente != 0) {
-        echo $geo . "\n";
+        $log .= "--------------------\nGeo Punto: ";
+        $log .= $geo . "\n";
     }
 
     $encontrados = array();
@@ -81,13 +89,13 @@ while ($bot = mysql_fetch_assoc($bots)) {
         while ($seguir == true) {
             try {
                 if ($ambiente != 0) {
-                    echo "Pagina: " . $pagina . "\n";
+                    $log .= "-----------------\nPagina: " . $pagina . "\n";
                 }
-                //$buscados = $twitter->search($query_tw_palabra, null, null, 100, $pagina, null, null, $geo, true, null);
+                $buscados = $twitter->search($query_tw_palabra, null, null, 100, $pagina, null, null, $geo, true, null);
 
                 if ($ambiente != 0) {
-                    echo "Palabra Indice: " . $palabra_indice . "\n";
-                    echo "Query TW: " . $query_tw_palabra . "\n";
+                    $log .= "Palabra Indice: " . $palabra_indice . "\n";
+                    $log .=  "Query TW: " . $query_tw_palabra . "\n";
                 }
 
                 if (!empty($buscados['results'])) {
@@ -127,6 +135,9 @@ while ($bot = mysql_fetch_assoc($bots)) {
                                     }
 
                                     $query_insert = "INSERT INTO tweets (bot_id, tw_usuario_id, estado, tw_tweet_id, tw_location, tw_text, tw_created_at, tw_usuario, created_at, updated_at, palabra) VALUES ('" . $bot['id'] . "', '" . $usuarios['from_user_id'] . "', '0', '" . $usuarios['id'] . "', '" . $usuarios['location'] . "', '" . $usuarios['text'] . "', '" . $usuarios['created_at'] . "', '" . $usuarios['from_user'] . "', '" .  date("Y-m-d H:i:s") . "', '" . date("Y-m-d H:i:s") . "', '". $query_tw_palabra ."');";
+                                    if ($ambiente != 0) {
+                                        $log .= "--------------------\nQuery Insert: " . $query_insert . "\n";
+                                    }
 
                                     mysql_query($query_insert);
                                     $id = mysql_insert_id();
@@ -134,7 +145,7 @@ while ($bot = mysql_fetch_assoc($bots)) {
                                     try {
                                         $seguido = $twitter->friendshipsExists($usuarios['from_user'], $bot['tw_cuenta']);
                                         if ($ambiente != 0) {
-                                            echo "Seguido: " . $seguido . "\n";
+                                            $log .= "Seguido: " . $seguido . "\n";
                                         }
                                         if ($seguido != 1) {
                                             
@@ -218,7 +229,7 @@ while ($bot = mysql_fetch_assoc($bots)) {
     }
 
     if ($ambiente != 0) {
-        echo "Cantidad Seguidos: " . $cantidad_seguidos . "\n";
+        $log .= "-------------------\nCantidad Seguidos: " . $cantidad_seguidos . "\n";
     }
     //mysql_query("UPDATE bots SET siguiendo = $cantidad_seguidos WHERE id = '{$bot['id']}';");
     mysql_query("UPDATE bots SET palabra_indice = $palabra_indice WHERE id = '{$bot['id']}';");
@@ -226,8 +237,21 @@ while ($bot = mysql_fetch_assoc($bots)) {
 
 if ($ambiente != 0) {
     if ($log != '') {
-        echo "-----------------------------------------------\n";
-        echo $log;
+        $log .= "-----------------------------------------------\n";
+        $log .= "\n\nEncontrados:\n" . print_r($encontrados, true);
+
+        $log .= "\n\nFin del proceso: ";
+        $log .= date("D, d/m/Y, H:i:s")."\n";
+
+        $log = $log."\nGuardando log...\n\n\n------------------------------------------------------------------------------------------------\n------------------------------------------------------------------------------------------------\n\n\n";
+
+        exec($directorio);
+
+        $fp=fopen($directorio . "logfollow.txt","x");
+
+        fwrite($fp,$log);
+        fclose($fp) ;
+
     }
 }
 
