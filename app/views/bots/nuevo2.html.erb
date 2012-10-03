@@ -10,14 +10,14 @@
 					<%= form.text_field :nombre %>
 				</div>
 
-				<div class="field control-group numero">
+				<div class="field control-group">
 					<%= form.label :tw_cuenta, "Cuenta Twitter" %>
 					<div class="input-prepend">
 						<span class="add-on">@</span><%= form.text_field :tw_cuenta, {class: "span2", readonly: "readonly"} %>
 					</div>
 				</div>
 
-				<div class="field control-group interseccion">
+				<div class="field control-group">
 					<%= form.label :tw_token, "Twitter Token" %>
 					<%= form.text_field :tw_token, {class: "input-xxlarge", readonly: "readonly"} %>
 				</div>
@@ -25,6 +25,13 @@
 				<div class="field control-group">
 					<%= form.label :tw_secret, "Twitter Secret" %>
 					<%= form.text_field :tw_secret, {class: "input-xxlarge", readonly: "readonly"} %>
+				</div>
+
+				<div class="field control-group">
+					<%= form.label :tw_cuenta, "Máximo a seguir por hora" %>
+					<div class="input-prepend">
+						<%= form.text_field :cantidad_seguir, {value: "10"} %>
+					</div>
 				</div>
 			</fieldset>
 

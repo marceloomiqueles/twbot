@@ -21,6 +21,8 @@ while ($bot = mysql_fetch_assoc($bots)) {
     $ciudad_indice = $bot['ciudad_indice'];
     $palabra_indice = $bot['palabra_indice'];
     $cantidad_seguidos = $bot['siguiendo'];
+    $max_seguir = $bot['cantidad_seguir'];
+    $cantidad_seguir = 0;
 
     $palabras = mysql_query("SELECT * FROM palabras WHERE bot_id = '{$bot['id']}' and estado = 1");
 
@@ -161,6 +163,12 @@ while ($bot = mysql_fetch_assoc($bots)) {
                                                 mysql_query("UPDATE bots SET siguiendo = '$contador' WHERE id = '{$bot['id']}'");
                                                 $cantidad_seguidos++;
                                                 $encontrados[] = $usuarios;
+
+                                                $cantidad_seguir++;
+                                                if ($cantidad_seguir >= $max_seguir) {
+                                                    $seguir = false;
+                                                    $recorrido = false;
+                                                }
                                             }
 
                                         } else {
