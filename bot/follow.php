@@ -24,7 +24,7 @@ while ($bot = mysql_fetch_assoc($bots)) {
     $max_seguir = $bot['cantidad_seguir'];
     $cantidad_seguir = 0;
 
-    $palabras = mysql_query("SELECT * FROM palabras WHERE bot_id = '{$bot['id']}' and estado = 1");
+    $palabras = mysql_query("SELECT * FROM palabras WHERE bot_id = '{$bot['id']}';");
 
     $arrayPalabras = array();
     $index = 1;
@@ -36,7 +36,7 @@ while ($bot = mysql_fetch_assoc($bots)) {
     mysql_query("UPDATE bots SET palabra_maximo = $cantidad_palabras WHERE id = '{$bot['id']}';");
     if ($ambiente != 0) {
         $log .= "---------------------------\nPalabras\n";
-        $log .= "Query: SELECT * FROM palabras WHERE bot_id = '" . $bot['id'] . "' and estado = 1;\n";
+        $log .= "Query: SELECT * FROM palabras WHERE bot_id = '" . $bot['id'] . "';\n";
         $log .= print_r($arrayPalabras, true);
         $log .= "\n";
     }
@@ -169,7 +169,17 @@ while ($bot = mysql_fetch_assoc($bots)) {
                                                 if ($cantidad_seguir >= $max_seguir) {
                                                     $seguir = false;
                                                     $recorrido = false;
+                                                    if ($ambiente != 0) {
+                                                        $log .= "---------------------------------\nFINALIZA POR MAXIMO\n---------------------------------\n";
+                                                    }
                                                 }
+                                                if ($ambiente != 0) {
+                                                    $log .= "---------------------------------\n";
+                                                    $log .= "Cantidad a seguir: " . $cantidad_seguir . "\n";
+                                                    $log .= "Maximo a seguir: " . $max_seguir . "\n";
+                                                    $log .= "---------------------------------\n";
+                                                }
+
                                             }
 
                                         } else {
