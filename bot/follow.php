@@ -36,6 +36,7 @@ while ($bot = mysql_fetch_assoc($bots)) {
     mysql_query("UPDATE bots SET palabra_maximo = $cantidad_palabras WHERE id = '{$bot['id']}';");
     if ($ambiente != 0) {
         $log .= "---------------------------\nPalabras\n";
+        $log .= "Query: SELECT * FROM palabras WHERE bot_id = '" . $bot['id'] . "' and estado = 1;\n";
         $log .= print_r($arrayPalabras, true);
         $log .= "\n";
     }
