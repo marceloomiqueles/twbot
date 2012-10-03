@@ -6,7 +6,7 @@ require('ambiente.php');
 include('twitter.php');
 
 if ($ambiente != 0) {
-    $log .= date("D, d/m/Y, H:i:s")."\n";
+    $log = date("D, d/m/Y, H:i:s")."\n";
 }
 
 $twitter = new Twitter($key, $secret);
