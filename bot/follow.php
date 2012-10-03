@@ -166,20 +166,20 @@ while ($bot = mysql_fetch_assoc($bots)) {
                                                 $encontrados[] = $usuarios;
 
                                                 $cantidad_seguir++;
-                                                if ($cantidad_seguir >= $max_seguir) {
-                                                    $seguir = false;
-                                                    $recorrido = false;
-                                                    if ($ambiente != 0) {
-                                                        $log .= "---------------------------------\nFINALIZA POR MAXIMO\n";
-                                                    }
-                                                }
                                                 if ($ambiente != 0) {
                                                     $log .= "---------------------------------\n";
                                                     $log .= "Cantidad a seguir: " . $cantidad_seguir . "\n";
                                                     $log .= "Maximo a seguir: " . $max_seguir . "\n";
                                                     $log .= "---------------------------------\n";
                                                 }
-
+                                                if ($cantidad_seguir >= $max_seguir) {
+                                                    $seguir = false;
+                                                    $recorrido = false;
+                                                    if ($ambiente != 0) {
+                                                        $log .= "FINALIZA POR MAXIMO\n---------------------------------\n";
+                                                    }
+                                                    break;
+                                                }
                                             }
 
                                         } else {
