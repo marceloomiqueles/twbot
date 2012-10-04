@@ -46,9 +46,9 @@
                             <% if tweet.estado == 2 %>
                                 <span class="btn btn-mini disabled">Unfollow</span>
                             <% elsif tweet.estado == 4 %>
-                                <%= link_to "Follow", bot_tweets_follow_path(@bot, tweet.id), class: "btn btn-mini btn-primary" %>
+                                <%= link_to "Follow", bot_tweets_follow_path(@bot, tweet.id), class: "btn btn-mini btn-primary", confirm: "Seguro que quieres seguir a esta persona?" %>
                             <% else %>
-                                <%= link_to "Unfollow", bot_tweets_unfollow_path(@bot, tweet.id), class: "btn btn-mini btn-danger" %>
+                                <%= link_to "Unfollow", bot_tweets_unfollow_path(@bot, tweet.id), class: "btn btn-mini btn-danger", confirm: "Seguro que quieres dejar de seguir a esta persona?" %>
                             <% end %>
                         </div>
                     </div>
