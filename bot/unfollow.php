@@ -13,6 +13,7 @@ while ($bot = mysql_fetch_assoc($bots)) {
     $twitter->setOAuthTokenSecret($bot['tw_secret']);
 
     $query = "SELECT * FROM tweets WHERE fecha <  '" . date('Y-m-d', strtotime('-2 days')) . " 00:00:00' AND bot_id = '" . $bot['id'] . "' AND estado <> 2;";
+    echo $query . "\n";
 
     $qry = mysql_query($query);
 
