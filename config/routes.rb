@@ -16,6 +16,8 @@
   match '/bot/:id/ciudades/del/:id_botciudad' => 'bots#eliminar_ciudad', :as => '/bot/ciudades/del'
 
   match '/bot/:id/tweets' => 'bots#tweets', :as => '/bot/tweets'
+  match '/bot/:id/tweets/unfollow/:tweet' => 'bots#unfollow', :as => '/bot/tweets/unfollow'
+  match '/bot/:id/tweets/follow/:tweet' => 'bots#follow', :as => '/bot/tweets/follow'
 
   match "/auth/:provider/callback" => "bots#auth"
   match "/auth/failure" => "bots#fail_auth"

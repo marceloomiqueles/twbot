@@ -21,7 +21,7 @@
     	</tr>
 	    <% @bot.tweets.sort! {|a,b| a.created_at <=> b.created_at}.reverse.each do |tweet| %>
 	    	<tr>
-	    		<td><%= tweet.tw_usuario %></td>
+	    		<td><%= link_to "@"+tweet.tw_usuario, "http://twitter.com/"+tweet.tw_usuario %></td>
                 <td><%= tweet.tw_text %></td>
                 <td><%= tweet.tw_location %></td>
                 <td><%= tweet.tw_created_at %></td>
@@ -46,9 +46,9 @@
                             <% if tweet.estado == 2 %>
                                 <span class="btn btn-mini disabled">Unfollow</span>
                             <% elsif tweet.estado == 4 %>
-                                <%= link_to "Follow", '#', class: "btn btn-mini btn-primary" %>
+                                <%= link_to "Follow", bot_tweets_follow_path(@bot, tweet.id), class: "btn btn-mini btn-primary" %>
                             <% else %>
-                                <%= link_to "Unfollow", '#', class: "btn btn-mini btn-danger" %>
+                                <%= link_to "Unfollow", bot_tweets_unfollow_path(@bot, tweet.id), class: "btn btn-mini btn-danger" %>
                             <% end %>
                         </div>
                     </div>

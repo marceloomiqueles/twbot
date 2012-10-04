@@ -1,5 +1,5 @@
 class BotsController < ApplicationController
-  before_filter :recuperar_bot, :only => [:palabras, :agregar_palabra, :eliminar, :guardar_palabra, :ciudades, :tweets]
+  before_filter :recuperar_bot, :only => [:palabras, :agregar_palabra, :eliminar, :guardar_palabra, :ciudades, :tweets, :unfollow, :follow]
 
   # Recupera bot según parametro de url
   def recuperar_bot
@@ -21,6 +21,9 @@ class BotsController < ApplicationController
   	@bot.estado = 0
     @bot.siguiendo = 0
     @bot.seguidores = 0
+    @bot.palabra_indice = 1
+    @bot.palabra_maximo = 1
+    @bot.ciudad_indice = 1
   	if @bot.valid?
   		@bot.save
   		redirect_to(root_path, :notice => "Bot creado OK")
@@ -108,5 +111,39 @@ class BotsController < ApplicationController
 
   # Mustra listado de las personas que se han seguido
   def tweets
+  end
+
+  # unfollow a personas manualmente
+  def unfollow
+    @twitter = Twitter::Client.new(
+      :oauth_token => @bot.tw_token,
+      :oauth_token_secret => @bot.tw_secret
+    )
+
+    @tweet = Tweet.find(params[:tweet])
+
+    @twitter.unfollow(@tweet.tw_usuario)
+    @tweet.estado = 4
+    @tweet.save
+
+    mensaje = "Dejo de seguir a " + @tweet.tw_usuario
+    redirect_to(bot_tweets_path(@bot), notice: mensaje)
+  end
+
+  # follow a personas manualmente
+  def follow
+    @twitter = Twitter::Client.new(
+      :oauth_token => @bot.tw_token,
+      :oauth_token_secret => @bot.tw_secret
+    )
+
+    @tweet = Tweet.find(params[:tweet])
+
+    @twitter.follow(@tweet.tw_usuario)
+    @tweet.estado = 1
+    @tweet.save
+
+    mensaje = "Se sigue a " + @tweet.tw_usuario
+    redirect_to(bot_tweets_path(@bot), notice: mensaje)
   end
 end

@@ -12,7 +12,7 @@ if ($ambiente != 0) {
 $twitter = new Twitter($key, $secret);
 
 
-$bots = mysql_query("SELECT * FROM bots");
+$bots = mysql_query("SELECT * FROM bots WHERE estado = 1");
 
 
 while ($bot = mysql_fetch_assoc($bots)) {
