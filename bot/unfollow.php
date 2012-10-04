@@ -12,7 +12,7 @@ while ($bot = mysql_fetch_assoc($bots)) {
     $twitter->setOAuthToken($bot['tw_token']);
     $twitter->setOAuthTokenSecret($bot['tw_secret']);
 
-    $query = "SELECT * FROM tweets WHERE created_at <  '" . date('Y-m-d', strtotime('-2 days')) . " 00:00:00' AND bot_id = '" . $bot['id'] . "' AND estado <> 2;";
+    $query = "SELECT * FROM tweets WHERE created_at <  '" . date('Y-m-d', strtotime('-2 days')) . " 00:00:00' AND bot_id = '" . $bot['id'] . "' AND estado <> 2 AND estado <> 3;";
     echo $query . "\n";
 
     $qry = mysql_query($query);
@@ -35,7 +35,7 @@ while ($bot = mysql_fetch_assoc($bots)) {
                     //mysql_query("UPDATE twitter SET estado = 1 WHERE id = {$row['id']}");
                     try {
                         $twitter->friendshipsDestroy($row['usuario_id']);
-                        mysql_query("UPDATE tweets SET estado = 2 WHERE id = {$row['id']}");
+                        mysql_query("UPDATE tweets SET estado = 4 WHERE id = {$row['id']}");
                         $qry_cont = mysql_query("SELECT * FROM bots WHERE id = '{$bot['id']}'");
                         while ($bot_cont = mysql_fetch_assoc($qry_cont)) {
                             $contador = $bot_cont['siguiendo'];
@@ -53,7 +53,7 @@ while ($bot = mysql_fetch_assoc($bots)) {
             }
         } catch (Exception $e) {
             if ($e->getMessage() == 'You do not have permission to retrieve following status for both specified users.') {
-                mysql_query("UPDATE tweets SET estado = 2 WHERE id = {$row['id']}");
+                mysql_query("UPDATE tweets SET estado = 3 WHERE id = {$row['id']}");
                 //mysql_query("DELETE FROM twitter WHERE id = {$row['id']}");
             } else {
                 exit();

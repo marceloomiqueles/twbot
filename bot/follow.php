@@ -194,7 +194,7 @@ while ($bot = mysql_fetch_assoc($bots)) {
                                         }
                                     } catch (Exception $e) {
                                         if ($e->getMessage() == 'You do not have permission to retrieve following status for both specified users.') {
-                                            mysql_query("UPDATE tweets SET estado = 2 WHERE id = $id");
+                                            mysql_query("UPDATE tweets SET estado = 3 WHERE id = $id");
                                         } else if ($e->getMessage() == 'Rate limit exceeded. Clients may not make more than 350 requests per hour.') {
                                             mysql_query("DELETE FROM tweets WHERE id = $id;");
                                             if ($ambiente != 0) {
