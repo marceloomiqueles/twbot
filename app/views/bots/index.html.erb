@@ -10,6 +10,7 @@
     		<th>Palabras</th>
             <th>Ciudades</th>
             <th>Máx x Hora</th>
+            <th>Verificar</th>
             <th>Se han seguido</th>
             <th>Han seguido de vuelta</th>
     		<th>Acciones</th>
@@ -21,21 +22,30 @@
 	    		<td><%= bot.palabras.length %></td>
                 <td><%= bot.botCiudads.length %></td>
                 <td><%= bot.cantidad_seguir %></td>
+                <td><%= bot.verificar_seguido %> dias</td>
                 <td><%= bot.siguiendo %></td>
                 <td><%= bot.seguidores %></td>
 	    		<td>
                     <div class="btn-toolbar">
                         <div class="btn-group">
                             <% if bot.estado == 0 %>
-                                <%= link_to "ON", bot_on_path(bot), class: "btn btn-mini btn-success", :confirm => "Seguro que quieres encender este bot?" %>
+                                <% if bot.palabras.length > 0 && bot.botCiudads.length > 0 %>
+                                    <%= link_to "ON", bot_on_path(bot), class: "btn btn-mini btn-success", title: "Encender Bot", :confirm => "Seguro que quieres encender este bot?" %>
+                                <% else %>
+                                    <span class="btn btn-mini btn-success disabled" title="Agrega al menos una palabra y una ciudad al Bot">ON</span>
+                                <% end %>
                             <% else %>
-                                <%= link_to "OFF", bot_off_path(bot), class: "btn btn-mini btn-danger", :confirm => "Seguro que quieres apagar este bot?" %>
+                                <%= link_to "OFF", bot_off_path(bot), class: "btn btn-mini btn-danger", title: "Apagar Bot", :confirm => "Seguro que quieres apagar este bot?" %>
                             <% end %>
-                            <%= link_to "Pal", bot_palabras_path(bot), class: "btn btn-mini" %>
-                            <%= link_to "Ciu", bot_ciudades_path(bot), class: "btn btn-mini" %>
-                            <%= link_to "Tweets", bot_tweets_path(bot), class: "btn btn-mini" %>
-                            <%= link_to "<i class='icon-edit'></i>".html_safe, bot_editar_path(bot), class: "btn btn-mini" %>
-                            <%= link_to "<i class='icon-trash icon-white'></i>".html_safe, bot_eliminar_path(bot), class: "btn btn-mini btn-danger", :confirm => "Seguro que quieres eliminar este bot?" %>
+                            <%= link_to "<i class='icon-edit'></i>".html_safe, bot_editar_path(bot), class: "btn btn-mini btn-info", title: "Editar Bot" %>
+                            <%= link_to "<i class='icon-trash icon-white'></i>".html_safe, bot_eliminar_path(bot), class: "btn btn-mini btn-danger", title: "Eliminar Bot", :confirm => "Seguro que quieres eliminar este bot?" %>
+                        </div>
+                    </div>
+                    <div class="btn-toolbar">
+                        <div class="btn-group">
+                            <%= link_to "Palabras", bot_palabras_path(bot), class: "btn btn-mini", title: "Palabras asociadas al Bot" %>
+                            <%= link_to "Ciudades", bot_ciudades_path(bot), class: "btn btn-mini", title: "Ciudades asociadas al Bot" %>
+                            <%= link_to "Tweets", bot_tweets_path(bot), class: "btn btn-mini", title: "Tweets que se han seguido con el Bot" %>
                         </div>
                     </div>
                 </td>

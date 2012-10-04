@@ -12,7 +12,7 @@ while ($bot = mysql_fetch_assoc($bots)) {
     $twitter->setOAuthToken($bot['tw_token']);
     $twitter->setOAuthTokenSecret($bot['tw_secret']);
 
-    $query = "SELECT * FROM tweets WHERE created_at <  '" . date('Y-m-d', strtotime('-2 days')) . " 00:00:00' AND bot_id = '" . $bot['id'] . "' AND estado <> 2 AND estado <> 3;";
+    $query = "SELECT * FROM tweets WHERE created_at <  '" . date('Y-m-d', strtotime('-'.$bot['verificar_seguido'].' days')) . " 00:00:00' AND bot_id = '" . $bot['id'] . "' AND estado <> 2 AND estado <> 3;";
     echo $query . "\n";
 
     $qry = mysql_query($query);

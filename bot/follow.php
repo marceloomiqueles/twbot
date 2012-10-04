@@ -172,7 +172,7 @@ while ($bot = mysql_fetch_assoc($bots)) {
                                                     $log .= "Maximo a seguir: " . $max_seguir . "\n";
                                                     $log .= "---------------------------------\n";
                                                 }
-                                                if ($cantidad_seguir >= $max_seguir) {
+                                                if ($cantidad_seguir > $max_seguir) {
                                                     $seguir = false;
                                                     $recorrido = false;
                                                     if ($ambiente != 0) {
