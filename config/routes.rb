@@ -3,7 +3,11 @@
 
   match '/bot/nuevo' => 'bots#nuevo', :as => '/bot/nuevo', :via => :get
   match '/bot/nuevo' => 'bots#guardar', :as => '/bot/nuevo', :via => :post
+  match '/bot/:id/editar' => 'bots#editar', :as => '/bot/editar', :via => :get
+  match '/bot/:id/editar' => 'bots#actualizar', :as => '/bot/editar', :via => :put
   match '/bot/eliminar/:id' => 'bots#eliminar', :as => '/bot/eliminar'
+  match '/bot/on/:id' => 'bots#bot_on', :as => '/bot/on'
+  match '/bot/off/:id' => 'bots#bot_off', :as => '/bot/off'
   match '/bot/login' => 'bots#login', :as => '/bot/login', :via => :post
 
   match '/bot/:id/palabras' => 'bots#palabras', :as => '/bot/palabras'

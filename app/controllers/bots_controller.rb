@@ -1,5 +1,5 @@
 class BotsController < ApplicationController
-  before_filter :recuperar_bot, :only => [:palabras, :agregar_palabra, :eliminar, :guardar_palabra, :ciudades, :tweets, :unfollow, :follow]
+  before_filter :recuperar_bot, :only => [:editar, :actualizar, :bot_on, :bot_off, :palabras, :agregar_palabra, :eliminar, :guardar_palabra, :ciudades, :tweets, :unfollow, :follow]
 
   # Recupera bot según parametro de url
   def recuperar_bot
@@ -61,6 +61,33 @@ class BotsController < ApplicationController
   def eliminar
     @bot.destroy
     redirect_to(root_path, :notice => "Bot Eliminado")
+  end
+
+  # Formulario Editar
+  def editar
+  end
+
+  # Formulario Editar
+  def actualizar
+    if @bot.update_attributes(params[:bot])
+      redirect_to(root_path, :notice => "Bot Actualizado")
+    else
+      render 'editar'
+    end
+  end
+
+  # Encender bot
+  def bot_on
+    @bot.estado = 1
+    @bot.save
+    redirect_to(root_path, :notice => "Bot Encendido")
+  end
+
+  # Apagar bot
+  def bot_off
+    @bot.estado = 0
+    @bot.save
+    redirect_to(root_path, :notice => "Bot Apagado")
   end
 
   # Despliega listado de Palabras de un Bot
