@@ -21,7 +21,7 @@ while ($bot = mysql_fetch_assoc($bots)) {
         mysql_query("UPDATE tweets SET estado = 0 WHERE id = {$row['id']}");
         
         try {
-            if ($twitter->friendshipsExists($row['usuario_id'], $bot[tw_usuario])) {
+            if ($twitter->friendshipsExists($row['tw_usuario_id'], $bot['tw_cuenta'])) {
                 mysql_query("UPDATE tweets SET estado = 2 WHERE id = '{$row['id']}'");
                 $qry_cont = mysql_query("SELECT * FROM bots WHERE id = '{$bot['id']}'");
                 while ($bot_cont = mysql_fetch_assoc($qry_cont)) {
@@ -31,10 +31,10 @@ while ($bot = mysql_fetch_assoc($bots)) {
                 mysql_query("UPDATE bots SET seguidores = '$contador' WHERE id = '{$bot['id']}'");
             } else {
 
-                if ($twitter->friendshipsExists($bot[tw_usuario], $row['usuario_id'])) {
+                if ($twitter->friendshipsExists($bot['tw_cuenta'], $row['tw_usuario_id'])) {
                     //mysql_query("UPDATE twitter SET estado = 1 WHERE id = {$row['id']}");
                     try {
-                        $twitter->friendshipsDestroy($row['usuario_id']);
+                        $twitter->friendshipsDestroy($row['tw_usuario_id']);
                         mysql_query("UPDATE tweets SET estado = 4 WHERE id = {$row['id']}");
                         $qry_cont = mysql_query("SELECT * FROM bots WHERE id = '{$bot['id']}'");
                         while ($bot_cont = mysql_fetch_assoc($qry_cont)) {
