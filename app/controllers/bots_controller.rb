@@ -149,6 +149,7 @@ class BotsController < ApplicationController
 
   # Mustra listado de las personas que se han seguido
   def tweets
+    @tweets = Tweet.paginate(:conditions => ['bot_id = ?', @bot.id], :order => 'created_at DESC', :per_page => 20, :page => params[:page])
   end
 
   # Muestra detalle de un tweet
