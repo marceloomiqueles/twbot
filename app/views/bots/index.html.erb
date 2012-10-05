@@ -30,14 +30,14 @@
                         <div class="btn-group">
                             <% if bot.estado == 0 %>
                                 <% if bot.palabras.length > 0 && bot.botCiudads.length > 0 %>
-                                    <%= link_to "<i class='icon-play'></i>".html_safe, bot_on_path(bot), class: "btn btn-mini btn-success", title: "Encender Bot", :confirm => "Seguro que quieres encender este bot?" %>
+                                    <%= link_to "<i class='icon-play icon-white'></i>".html_safe, bot_on_path(bot), class: "btn btn-mini btn-success", title: "Encender Bot", :confirm => "Seguro que quieres encender este bot?" %>
                                 <% else %>
-                                    <span class="btn btn-mini btn-success disabled" title="Agrega al menos una palabra y una ciudad al Bot"><i class='icon-play'></i></span>
+                                    <span class="btn btn-mini btn-success disabled" title="Agrega al menos una palabra y una ciudad al Bot"><i class='icon-play icon-white'></i></span>
                                 <% end %>
                             <% else %>
-                                <%= link_to "<i class='icon-stop'></i>".html_safe, bot_off_path(bot), class: "btn btn-mini btn-danger", title: "Apagar Bot", :confirm => "Seguro que quieres apagar este bot?" %>
+                                <%= link_to "<i class='icon-stop icon-white'></i>".html_safe, bot_off_path(bot), class: "btn btn-mini btn-danger", title: "Apagar Bot", :confirm => "Seguro que quieres apagar este bot?" %>
                             <% end %>
-                            <%= link_to "<i class='icon-edit'></i>".html_safe, bot_editar_path(bot), class: "btn btn-mini btn-info", title: "Editar Bot" %>
+                            <%= link_to "<i class='icon-edit icon-white'></i>".html_safe, bot_editar_path(bot), class: "btn btn-mini btn-info", title: "Editar Bot" %>
                             <%= link_to "<i class='icon-trash icon-white'></i>".html_safe, bot_eliminar_path(bot), class: "btn btn-mini btn-danger", title: "Eliminar Bot", :confirm => "Seguro que quieres eliminar este bot?" %>
                         </div>
                     </div>

@@ -115,6 +115,10 @@ class BotsController < ApplicationController
   def eliminar_palabra
     @palabra = Palabra.find(params[:palabra_id])
     @palabra.destroy
+    bot = Bot.find(params[:id])
+    if bot.palabras.length == 0
+      bot.update_attributes(estado: 0)
+    end
     redirect_to(bot_palabras_path(params[:id]), :notice => "Palabra Eliminada")
   end
 
@@ -133,6 +137,10 @@ class BotsController < ApplicationController
   def eliminar_ciudad
     @botciudad = BotCiudad.find(params[:id_botciudad])
     @botciudad.destroy
+    bot = Bot.find(params[:id])
+    if bot.botCiudads.length == 0
+      bot.update_attributes(estado: 0)
+    end
     redirect_to(bot_ciudades_path(params[:id]), notice: "Ciudad Eliminada")
   end
 
