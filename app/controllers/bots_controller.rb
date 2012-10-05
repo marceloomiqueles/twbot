@@ -1,5 +1,5 @@
 class BotsController < ApplicationController
-  before_filter :recuperar_bot, :only => [:editar, :actualizar, :bot_on, :bot_off, :palabras, :agregar_palabra, :eliminar, :guardar_palabra, :ciudades, :tweets, :unfollow, :follow]
+  before_filter :recuperar_bot, :only => [:editar, :actualizar, :bot_on, :bot_off, :palabras, :agregar_palabra, :eliminar, :guardar_palabra, :ciudades, :tweets, :tweet_detalle, :unfollow, :follow]
 
   # Recupera bot según parametro de url
   def recuperar_bot
@@ -59,6 +59,9 @@ class BotsController < ApplicationController
 
   # Elimina Bot del Sistema
   def eliminar
+    @bot.palabras.destroy_all
+    @bot.botCiudads.destroy_all
+    @bot.tweets.destroy_all
     @bot.destroy
     redirect_to(root_path, :notice => "Bot Eliminado")
   end
@@ -146,6 +149,11 @@ class BotsController < ApplicationController
 
   # Mustra listado de las personas que se han seguido
   def tweets
+  end
+
+  # Muestra detalle de un tweet
+  def tweet_detalle
+    @tweet = Tweet.find(params[:tweet_id])
   end
 
   # unfollow a personas manualmente

@@ -6,7 +6,9 @@ require('ambiente.php');
 include('twitter.php');
 
 if ($ambiente != 0) {
-    $log = date("D, d/m/Y, H:i:s")."\n";
+    $log = "------------------------------------------------------------------------\n";
+    $log .= "Inicio Log - ";
+    $log .= date("D, d/m/Y, H:i:s")."\n";
 }
 
 $twitter = new Twitter($key, $secret);
@@ -271,9 +273,9 @@ if ($ambiente != 0) {
 
         $log = $log."\nGuardando log...\n\n\n------------------------------------------------------------------------------------------------\n------------------------------------------------------------------------------------------------\n\n\n";
 
-        exec("rm " . $directorio . "logfollow.txt");
+        //exec("rm " . $directorio . "logfollow.txt");
 
-        $fp=fopen($directorio . "logfollow.txt","x");
+        $fp=fopen($directorio . "logfollow.txt","a");
 
         fwrite($fp,$log);
         fclose($fp) ;

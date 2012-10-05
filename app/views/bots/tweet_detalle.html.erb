@@ -1,0 +1,56 @@
+<% provide(:title, 'Detalle Tweet') %>
+<div class="center hero-unit">
+  	<h1>Detalle Tweet</h1>
+  	<h2>Bot <%= @bot.nombre %></h2>
+  	<%= link_to "Volver", bot_tweets_path(@bot), class: "btn btn-large btn-primary" %>
+  	<table>
+  		<tr>
+  			<th>ID</th>
+  			<td><%= @tweet.id %></td>
+  		</tr>
+  		<tr>
+  			<th>Cuenta</th>
+  			<td><%= link_to "@"+@tweet.tw_usuario, "http://twitter.com/"+@tweet.tw_usuario %></td>
+  		</tr>
+  		<tr>
+  			<th>Tweet ID</th>
+  			<td><%= link_to @tweet.tw_tweet_id, "http://twitter.com/"+@tweet.tw_usuario+"/status/"+@tweet.tw_tweet_id %></td>
+  		</tr>
+  		<tr>
+  			<th>Tweet Texto</th>
+  			<td><%= @tweet.tw_text %></td>
+  		</tr>
+  		<tr>
+  			<th>Location</th>
+  			<td><%= @tweet.tw_location %></td>
+  		</tr>
+  		<tr>
+  			<th>Creado el</th>
+  			<td><%= @tweet.tw_created_at %></td>
+  		</tr>
+  		<tr>
+  			<th>Se sigue desde</th>
+  			<td><%= @tweet.created_at %></td>
+  		</tr>
+  		<tr>
+  			<th>Estado</th>
+  			<td>
+  				<% if @tweet.estado == 0 %>
+                    Pendiente
+                <% elsif @tweet.estado == 1 %>
+                    Siguiendo
+                <% elsif @tweet.estado == 2 %>
+                    Sigue
+                <% elsif @tweet.estado == 3 %>
+                    Desconocido
+                <% elsif @tweet.estado == 4 %>
+                    No se sigue
+                <% end %>
+  			</td>
+  		</tr>
+  		<tr>
+  			<th>Se comenzó a seguir con la palabra</th>
+  			<td><%= @tweet.palabra %></td>
+  		</tr>
+  	</table>
+</div>
