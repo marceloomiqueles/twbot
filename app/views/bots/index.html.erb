@@ -5,26 +5,30 @@
     <% end %>
     <table>
     	<tr>
-    		<th>Nombre</th>
+            <th>Nombre</th>
     		<th>Cuenta Twitter</th>
-    		<th>Palabras</th>
-            <th>Ciudades</th>
-            <th>Máx x Hora</th>
-            <th>Verificar</th>
-            <th>Se han seguido</th>
-            <th>Han seguido de vuelta</th>
+    		<th>Asociados</th>
+            <th>Configuración</th>
+            <th>Estadísticas</th>
     		<th>Acciones</th>
     	</tr>
     	<% @bots.each do |bot| %>
 	    	<tr>
-	    		<td><%= bot.nombre %></td>
+                <td><%= bot.nombre %></td>
 	    		<td><%= link_to "@"+bot.tw_cuenta, "http://twitter.com/"+bot.tw_cuenta %></td>
-	    		<td><%= bot.palabras.length %></td>
-                <td><%= bot.botCiudads.length %></td>
-                <td><%= bot.cantidad_seguir %></td>
-                <td><%= bot.verificar_seguido %> dias</td>
-                <td><%= bot.siguiendo %></td>
-                <td><%= bot.seguidores %></td>
+	    		<td>
+                    <div><%= bot.palabras.length %> Palabras</div>
+                    <div><%= bot.botCiudads.length %> Ciudades</div>
+                </td>
+                <td>
+                    <div>Seguir por Hora: <%= bot.cantidad_seguir %></div>
+                    <div>Verificar Cada: <%= bot.verificar_seguido %> dias</div>
+                </td>
+                <td>
+                    <div>Inicial: <%= bot.followers_count %></div>
+                    <div>Siguiendo: <%= bot.siguiendo %></div>
+                    <div>Han Seguido: <%= bot.seguidores %></div>
+                </td>
 	    		<td>
                     <div class="btn-toolbar">
                         <div class="btn-group">

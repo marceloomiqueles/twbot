@@ -24,6 +24,11 @@ class BotsController < ApplicationController
     @bot.palabra_indice = 1
     @bot.palabra_maximo = 1
     @bot.ciudad_indice = 1
+    @twitter = Twitter::Client.new(
+      :oauth_token => @bot.tw_token,
+      :oauth_token_secret => @bot.tw_secret
+    )
+    @bot.followers_count = @twitter.user(@bot.tw_cuenta).follower_count
   	if @bot.valid?
   		@bot.save
   		redirect_to(root_path, :notice => "Bot creado OK")
