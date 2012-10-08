@@ -13,6 +13,7 @@
     		<th>Usuario</th>
             <th>Seguido</th>
             <th>Palabra</th>
+            <th>Ciudad</th>
             <th>Estado</th>
             <th>Acciones</th>
     	</tr>
@@ -21,6 +22,7 @@
 	    		<td><%= link_to "@"+tweet.tw_usuario, "http://twitter.com/"+tweet.tw_usuario %></td>
                 <td><%= tweet.created_at %></td>
                 <td><%= tweet.palabra %></td>
+                <td><%= tweet.ciudad %></td>
                 <td>
                     <% if tweet.estado == 0 %>
                         Pendiente
