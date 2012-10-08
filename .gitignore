@@ -27,3 +27,4 @@ doc/
 setup_load_paths.rb
 ambiente.php
 /public/assets/*.*
+/config/environment.rb
