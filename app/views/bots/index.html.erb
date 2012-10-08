@@ -26,7 +26,16 @@
                 </td>
                 <td>
                     <div>Inicial: <%= bot.followers_count %></div>
-                    <div>Siguiendo: <%= bot.siguiendo %></div>
+                    <div>
+                        <%
+                            twitter = Twitter::Client.new(
+                                :oauth_token => bot.tw_token,
+                                :oauth_token_secret => bot.tw_secret
+                            )
+                        %>
+                        Actuales: <%= twitter.user(bot.tw_cuenta).follower_count %>
+                    </div>
+                    <div>Seguidos x Bot: <%= bot.siguiendo %></div>
                     <div>Han Seguido: <%= bot.seguidores %></div>
                 </td>
 	    		<td>
