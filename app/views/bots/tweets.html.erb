@@ -7,6 +7,24 @@
       		<p><%= flash[:notice] %><p>
       	</div>
     <% end %>
+    <script>
+        $(document).ready(function() {
+            $('select[name="filtro"]').change(function() {
+                $('form').submit();
+            });
+        });
+    </script>
+    <%= form_for(:filtro, url: bot_tweets_path(@bot)) do |f| %>
+        <select name="filtro">
+            <option value="" >None</option>
+            <option value="0" <% if @filtro == '0' %>selected="selected" <% end %>>Pendiente</option>
+            <option value="1" <% if @filtro == '1' %>selected="selected" <% end %>>Siguiendo</option>
+            <option value="2" <% if @filtro == '2' %>selected="selected" <% end %>>Sigue</option>
+            <option value="3" <% if @filtro == '3' %>selected="selected" <% end %>>Desconocido</option>
+            <option value="4" <% if @filtro == '4' %>selected="selected" <% end %>>No se sigue</option>
+        </select>
+    <% end %>
+
     <%= will_paginate(@tweets) %>
     <table>
     	<tr>
