@@ -16,7 +16,7 @@
     </script>
     <%= form_for(:filtro, url: bot_tweets_path(@bot)) do |f| %>
         <select name="filtro">
-            <option value="" >None</option>
+            <option value="" >Todos</option>
             <option value="0" <% if @filtro == '0' %>selected="selected" <% end %>>Pendiente</option>
             <option value="1" <% if @filtro == '1' %>selected="selected" <% end %>>Siguiendo</option>
             <option value="2" <% if @filtro == '2' %>selected="selected" <% end %>>Sigue</option>
@@ -37,7 +37,7 @@
     	</tr>
 	    <% @tweets.each do |tweet| %>
 	    	<tr>
-	    		<td><%= link_to "@"+tweet.tw_usuario, "http://twitter.com/"+tweet.tw_usuario %></td>
+	    		<td><%= link_to "@"+tweet.tw_usuario, "http://twitter.com/"+tweet.tw_usuario, target: "_blank" %></td>
                 <td><%= tweet.created_at %></td>
                 <td><%= tweet.palabra %></td>
                 <td><%= tweet.ciudad %></td>

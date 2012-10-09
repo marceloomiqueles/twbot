@@ -10,11 +10,11 @@
   		</tr>
   		<tr>
   			<th>Cuenta</th>
-  			<td><%= link_to "@"+@tweet.tw_usuario, "http://twitter.com/"+@tweet.tw_usuario %></td>
+  			<td><%= link_to "@"+@tweet.tw_usuario, "http://twitter.com/"+@tweet.tw_usuario, target: "_blank" %></td>
   		</tr>
   		<tr>
   			<th>Tweet ID</th>
-  			<td><%= link_to @tweet.tw_tweet_id, "http://twitter.com/"+@tweet.tw_usuario+"/status/"+@tweet.tw_tweet_id %></td>
+  			<td><%= link_to @tweet.tw_tweet_id, "http://twitter.com/"+@tweet.tw_usuario+"/status/"+@tweet.tw_tweet_id, target: "_blank" %></td>
   		</tr>
   		<tr>
   			<th>Tweet Texto</th>
