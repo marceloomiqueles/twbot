@@ -8,6 +8,7 @@ class BotsController < ApplicationController
 
   # Despliega Listado todos los Bots
   def index
+    session[:filtro] = nil
   	@bots = Bot.all
   end
 
@@ -154,11 +155,16 @@ class BotsController < ApplicationController
 
   # Mustra listado de las personas que se han seguido
   def tweets
+    if session[:filtro] && !params[:filtro]
+      params[:filtro] = session[:filtro]
+    end
     @filtro = ''
     if params[:filtro] && params[:filtro] != ''
       @tweets = Tweet.paginate(:conditions => ['bot_id = ? and estado = ?', @bot.id, params[:filtro]], :order => 'created_at DESC', :per_page => 20, :page => params[:page])
       @filtro = params[:filtro]
+      session[:filtro] = params[:filtro]
     else
+      session[:filtro] = nil
       @tweets = Tweet.paginate(:conditions => ['bot_id = ?', @bot.id], :order => 'created_at DESC', :per_page => 20, :page => params[:page])
     end
   end
