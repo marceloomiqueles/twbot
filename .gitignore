@@ -29,3 +29,5 @@ ambiente.php
 /public/assets/*.*
 /config/environment.rb
 /config/database.yml
+/twbot/config/initializers/twitter.rb
+/twbot/config/initializers/omniauth.rb

@@ -6,6 +6,6 @@ Twbot::Application.initialize!
 
 
 # Globales
-NOMBRE_APP = "Followkeywords"
-EMPRESA = "ReFrame"
-URL_EMPRESA = "http://reframe.cl"
+NOMBRE_APP = "Botrodpalacios"
+EMPRESA = "Fibradigital"
+URL_EMPRESA = "http://fibradigital.com"
