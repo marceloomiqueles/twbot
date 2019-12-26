@@ -1,9 +1,12 @@
 #!/usr/bin/php  
-<?php  
+<?php 
 
 require('config.php');
 require('ambiente.php');
-include('twitter.php');
+require_once 'Exception.php';
+require_once 'Twitter.php';
+use \TijsVerkoyen\Twitter\Twitter;
+
 
 if ($ambiente != 0) {
     $log = "------------------------------------------------------------------------\n";
@@ -13,13 +16,12 @@ if ($ambiente != 0) {
 
 $twitter = new Twitter($key, $secret);
 
-
 $bots = mysql_query("SELECT * FROM bots WHERE estado = 1");
-
 
 while ($bot = mysql_fetch_assoc($bots)) {
     $twitter->setOAuthToken($bot['tw_token']);
     $twitter->setOAuthTokenSecret($bot['tw_secret']);
+
     $ciudad_indice = $bot['ciudad_indice'];
     $palabra_indice = $bot['palabra_indice'];
     $cantidad_seguidos = $bot['siguiendo'];
@@ -80,33 +82,42 @@ while ($bot = mysql_fetch_assoc($bots)) {
     $recorrido = true;
 
     while ($recorrido == true) {
-
         if ($palabra_indice > $cantidad_palabras) {
             $palabra_indice = 1;
             $recorrido = false;
         }
-    
+
         $query_tw_palabra = $arrayPalabras[$palabra_indice];
         
         $pagina = 1;
         $seguir = true;
-        
+        $maxId = null;
+
         while ($seguir == true) {
             try {
+
                 if ($ambiente != 0) {
                     $log .= "-----------------\nPagina: " . $pagina . "\n";
                 }
-                $buscados = $twitter->search($query_tw_palabra, null, null, 100, $pagina, null, null, $geo, true, null);
+
+                $buscados = $twitter->searchTweets($query_tw_palabra, $geo, null, null, null, 5, null, null, $maxId, null);
+
+                print_r($buscados);
+
+                break;
 
                 if ($ambiente != 0) {
                     $log .= "Palabra Indice: " . $palabra_indice . "\n";
                     $log .=  "Query TW: " . $query_tw_palabra . "\n";
                 }
 
-                if (!empty($buscados['results'])) {
-                    foreach ($buscados['results'] as $usuarios) {
+                if (!empty($buscados['statuses'])) {
+                    foreach ($buscados['statuses'] as $usuarios) {
+
+                        $maxId = $usuarios['user']['id'];
+
                         try {
-                            $qry = mysql_query("SELECT * FROM tweets WHERE bot_id = '{$bot['id']}' AND tw_usuario_id = '{$usuarios['from_user_id']}'");
+                            $qry = mysql_query("SELECT * FROM tweets WHERE bot_id = '{$bot['id']}' AND tw_usuario_id = '{$usuarios['user']['id']}'");
 
                             $continuar = true;
                             while($row = mysql_fetch_assoc($qry)) {
@@ -123,23 +134,14 @@ while ($bot = mysql_fetch_assoc($bots)) {
                             }
 
                             if ($continuar) {
-
-
                                 $coincidencia = true;
 
-    //                            foreach ($secundarias as $palabra) {
-    //                                if (strpos($usuarios['text'], $palabra) != false) {
-    //                                    $coincidencia = true;
-    //                                }
-    //                            }
-
                                 if ($coincidencia) {
-
-                                    if (!isset($usuarios['location'])) {
+                                    if (!isset($usuarios['user']['location'])) {
                                         $usuarios['location'] = "";
                                     }
 
-                                    $query_insert = "INSERT INTO tweets (bot_id, tw_usuario_id, estado, tw_tweet_id, tw_location, tw_text, tw_created_at, tw_usuario, created_at, updated_at, palabra, ciudad) VALUES ('" . $bot['id'] . "', '" . $usuarios['from_user_id'] . "', '0', '" . $usuarios['id'] . "', '" . $usuarios['location'] . "', '" . $usuarios['text'] . "', '" . $usuarios['created_at'] . "', '" . $usuarios['from_user'] . "', '" .  date("Y-m-d H:i:s") . "', '" . date("Y-m-d H:i:s") . "', '". $query_tw_palabra ."', '". $arrayCiudades[$ciudad_indice]['nombre'] ."');";
+                                    $query_insert = "INSERT INTO tweets (bot_id, tw_usuario_id, estado, tw_tweet_id, tw_location, tw_text, tw_created_at, tw_usuario, created_at, updated_at, palabra, ciudad) VALUES ('" . $bot['id'] . "', '" . $usuarios['user']['id'] . "', '0', '" . $usuarios['id'] . "', '" . $usuarios['user']['location'] . "', '" . $usuarios['text'] . "', '" . $usuarios['created_at'] . "', '" . $usuarios['user']['screen_name'] . "', '" .  date("Y-m-d H:i:s") . "', '" . date("Y-m-d H:i:s") . "', '". $query_tw_palabra ."', '". $arrayCiudades[$ciudad_indice]['nombre'] ."');";
                                     if ($ambiente != 0) {
                                         $log .= "--------------------\nQuery Insert: " . $query_insert . "\n";
                                     }
@@ -148,15 +150,22 @@ while ($bot = mysql_fetch_assoc($bots)) {
                                     $id = mysql_insert_id();
 
                                     try {
-                                        $seguido = $twitter->friendshipsExists($usuarios['from_user'], $bot['tw_cuenta']);
+                                        $siguiendo = $twitter->friendshipsLookup(array($usuarios['user']['id']), null);
+
                                         if ($ambiente != 0) {
-                                            $log .= "Seguido: " . $seguido . "\n";
+                                            $log .= "////////////// siguiendo:\n";
+                                            $log .= print_r($siguiendo, true);
                                         }
-                                        if ($seguido != 1) {
-                                            
-                                            $siguiendo = $twitter->friendshipsExists($bot['tw_cuenta'], $usuarios['from_user']);
-                                            if ($siguiendo != 1) {
-                                                $twitter->friendshipsCreate($usuarios['from_user_id']);
+
+                                        if (!in_array('followed_by', $siguiendo[0]['connections'])) {
+                                            if (!in_array('following', $siguiendo[0]['connections']) && !in_array('following_requested', $siguiendo[0]['connections'])) {
+                                                $crea_amistad = $twitter->friendshipsCreate($usuarios['user']['id'], null, false);
+
+                                                if ($ambiente != 0) {
+                                                    $log .= "////////////// resultado crea_amistad:\n";
+                                                    $log .= print_r($crea_amistad, true);
+                                                }
+
                                                 mysql_query("UPDATE tweets SET estado = 1 WHERE id = $id");
                                                 $qry_cont = mysql_query("SELECT * FROM bots WHERE id = '{$bot['id']}'");
                                                 while ($bot_cont = mysql_fetch_assoc($qry_cont)) {
@@ -183,7 +192,6 @@ while ($bot = mysql_fetch_assoc($bots)) {
                                                     break;
                                                 }
                                             }
-
                                         } else {
                                             mysql_query("UPDATE tweets SET estado = 2 WHERE id = $id");
                                             if ($ambiente != 0) {
@@ -194,6 +202,7 @@ while ($bot = mysql_fetch_assoc($bots)) {
                                                 $log .= "---------------------------------\n";
                                             }
                                         }
+
                                     } catch (Exception $e) {
                                         if ($e->getMessage() == 'You do not have permission to retrieve following status for both specified users.') {
                                             mysql_query("UPDATE tweets SET estado = 3 WHERE id = $id");
@@ -215,7 +224,9 @@ while ($bot = mysql_fetch_assoc($bots)) {
                                         }
                                     }
                                 }
+
                             }
+
                         } catch (Exception $e) {
                             if ($ambiente != 0) {
                                 $log .= "\n ERROR: " . $e . "\n\n";
@@ -225,6 +236,16 @@ while ($bot = mysql_fetch_assoc($bots)) {
                             break;
                         }
                     }
+
+                    if (empty($buscados['search_metadata']['next_results'])) {
+                        $seguir = false;
+                        if ($ambiente != 0) {
+                            $log .= "\n ////// SE ALCANZÓ LA PÁGINA FINAL DE LA BUSQUEDA ///// \n\n";
+                        }
+                    } else {
+                        $pagina++;
+                    }
+
                 } else {
                     if ($ambiente != 0) {
                         $log .= "Resultado Vacio\n";
@@ -232,12 +253,10 @@ while ($bot = mysql_fetch_assoc($bots)) {
                     $seguir = false;
                     break;
                 }
-    
+
                 if ($ambiente != 0) {
                     $log .= "\n";
                 }
-
-                $pagina++;
 
                 if ($pagina == 11) {
                     $seguir = false;
@@ -261,6 +280,7 @@ while ($bot = mysql_fetch_assoc($bots)) {
     }
     //mysql_query("UPDATE bots SET siguiendo = $cantidad_seguidos WHERE id = '{$bot['id']}';");
     mysql_query("UPDATE bots SET palabra_indice = $palabra_indice WHERE id = '{$bot['id']}';");
+
 }
 
 if ($ambiente != 0) {
@@ -283,4 +303,5 @@ if ($ambiente != 0) {
     }
 }
 
-?> 
+
+//*******************//

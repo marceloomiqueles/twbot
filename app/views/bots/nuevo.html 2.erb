@@ -1,0 +1,12 @@
+<% provide(:title, 'Nuevo') %>
+<div class="center hero-unit">
+  	<h1>Nuevo Bot</h1>
+
+	<% if flash[:error] %>
+      	<div class="mensajes_error">
+      		<p><%= flash[:error] %><p>
+      	</div>
+    <% end %>
+  	<p>Debes autorizar al bot de twitter con la cuenta que deseas ganar mas seguidores para poder continuar</p>
+  	<%= link_to "Autorizar Twitter", "/auth/twitter", class: "btn btn-large btn-primary" %>
+</div>

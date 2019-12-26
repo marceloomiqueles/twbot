@@ -1,48 +1,44 @@
 <% provide(:title, 'Nuevo') %>
-<div class="center hero-unit">
-  	<h1>Nuevo Bot</h1>
-  	<h2>Si esta no es la cuenta que deseas utilizar, deslogeate de twitter en otra ventana y vuelve a empezar</h2>
-  	<div class="form_puntos origen">
-		<%= form_for @bot, :url => bot_nuevo_path do |form| %>
-			<fieldset class="fields">
-				<div class="field control-group">
-					<%= form.label :nombre %>
-					<%= form.text_field :nombre %>
-				</div>
+<h1>Nuevo Bot</h1>
+<h3>Si esta no es la cuenta que deseas utilizar, deslogeate de twitter en otra ventana y vuelve a empezar</h3>
+<%= form_for @bot, :url => bot_guardar_path do |form| %>
+	<fieldset class="fields">
+		<div class="form-group">
+			<%= form.label :name %>
+			<%= form.text_field :name, :class => "form-control" %>
+		</div>
 
-				<div class="field control-group">
-					<%= form.label :tw_cuenta, "Cuenta Twitter" %>
-					<div class="input-prepend">
-						<span class="add-on">@</span><%= form.text_field :tw_cuenta, {class: "span2", readonly: "readonly"} %>
-					</div>
-				</div>
+		<div class="form-group">
+			<%= form.label :screen_name, "Cuenta Twitter" %>
+			<div class="input-group">
+				<div class="input-group-addon">@</div>
+				<%= form.text_field :screen_name, readonly: "readonly", :class => "form-control" %>
+			</div>
+		</div>
 
-				<div class="field control-group">
-					<%= form.label :tw_token, "Twitter Token" %>
-					<%= form.text_field :tw_token, {class: "input-xxlarge", readonly: "readonly"} %>
-				</div>
+		<div class="form-group">
+			<%= form.label :tw_token, "Twitter Token" %>
+			<%= form.text_field :tw_token, readonly: "readonly", :class => "form-control" %>
+		</div>
 
-				<div class="field control-group">
-					<%= form.label :tw_secret, "Twitter Secret" %>
-					<%= form.text_field :tw_secret, {class: "input-xxlarge", readonly: "readonly"} %>
-				</div>
+		<div class="form-group">
+			<%= form.label :tw_secret, "Twitter Secret" %>
+			<%= form.text_field :tw_secret, readonly: "readonly", :class => "form-control" %>
+		</div>
 
-				<div class="field control-group">
-					<%= form.label :cantidad_seguir, "Máximo a seguir por hora" %>
-					<%= form.text_field :cantidad_seguir, {value: "10"} %>
-				</div>
+		<div class="form-group">
+			<%= form.label :cantidad_seguir, "Máximo a seguir por hora" %>
+			<%= form.text_field :cantidad_seguir, value: "10", :class => "form-control" %>
+		</div>
 
-				<div class="field control-group">
-					<%= form.label :verificar_seguido, "Verificar seguidos despues de" %>
-					<div class="input-prepend">
-						<%= form.text_field :verificar_seguido, {class: "span1", value: "2"} %><span class="add-on">Dias</span>
-					</div>
-				</div>
-			</fieldset>
+		<div class="form-group">
+			<%= form.label :verificar_seguido, "Verificar seguidos despues de" %>
+			<div class="input-group">
+				<%= form.text_field :verificar_seguido, class: "span1", value: "2", :class => "form-control" %>
+				<div class="input-group-addon">Días</div>
+			</div>
+		</div>
+	</fieldset>
 
-			<fieldset class="actions">
-				<%= form.submit "Guardar", class: "btn btn-large btn-primary" %>
-			</fieldset>
-		<% end %>
-	</div>
-</div>
+	<%= form.submit "Guardar", class: "btn btn-default" %>
+<% end %>

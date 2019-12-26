@@ -1,0 +1,28 @@
+<% provide(:title, 'Login') %>
+<div class="center hero-unit">
+  	<h1>Login</h1>
+
+	<% if flash[:error] %>
+      	<div class="mensajes_error">
+      		<p><%= flash[:error] %><p>
+      	</div>
+    <% end %>
+  	<p>Bienvenido al sistema</p>
+
+  	<%= form_for(:session, url: bot_login_path) do |f| %>
+		<fieldset class="fields">
+			<div class="field">
+  				<%= f.label :email %>
+  				<%= f.text_field :email %>
+  			</div>
+  			<div class="field">
+  				<%= f.label :password %>
+  				<%= f.password_field :password %>
+  			</div>
+  		</fieldset>
+
+  		<fieldset class="actions-login">
+  			<%= f.submit "Ingresar", class: "btn btn-large btn-primary" %>
+  		</fieldset>
+	<% end %>
+</div>

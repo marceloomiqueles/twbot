@@ -1,0 +1,55 @@
+class AddManyFieldsToBots < ActiveRecord::Migration
+  def change
+  	add_column :bots, :id_bot, :integer
+		add_column :bots, :id_str, :string
+		rename_column :bots, :nombre, :name
+		rename_column :bots, :tw_cuenta, :screen_name
+		add_column :bots, :location, :string
+		add_column :bots, :profile_location, :string
+		add_column :bots, :description, :string
+		add_column :bots, :url, :string
+		add_column :bots, :expanded_url, :string
+		add_column :bots, :display_url, :string
+		add_column :bots, :protected, :boolean
+		add_column :bots, :friends_count, :integer
+		add_column :bots, :listed_count, :integer
+		add_column :bots, :created_at_perfil, :datetime
+		add_column :bots, :favourites_count, :integer
+		add_column :bots, :utc_offset, :integer
+		add_column :bots, :time_zone, :string
+		add_column :bots, :geo_enabled, :boolean
+		add_column :bots, :verified, :boolean
+		add_column :bots, :statuses_count, :integer
+		add_column :bots, :lang, :string
+		add_column :bots, :text, :string
+		add_column :bots, :truncated, :boolean
+		add_column :bots, :geo, :string
+		add_column :bots, :coordinates, :string
+		add_column :bots, :place, :string
+		add_column :bots, :contributors, :string
+		add_column :bots, :is_quote_status, :boolean
+		add_column :bots, :retweet_count, :integer
+		add_column :bots, :favorite_count, :integer
+		add_column :bots, :favorited, :boolean
+		add_column :bots, :retweeted, :boolean
+		add_column :bots, :contributors_enabled, :boolean
+		add_column :bots, :is_translator, :boolean
+		add_column :bots, :is_translation_enabled, :boolean
+		add_column :bots, :profile_background_color, :string
+		add_column :bots, :profile_background_image_url, :string
+		add_column :bots, :profile_background_image_url_https, :string
+		add_column :bots, :profile_background_tile, :boolean
+		add_column :bots, :profile_image_url, :string
+		add_column :bots, :profile_image_url_https, :string
+		add_column :bots, :profile_banner_url, :string
+		add_column :bots, :profile_link_color, :string
+		add_column :bots, :profile_sidebar_border_color, :string
+		add_column :bots, :profile_sidebar_fill_color, :string
+		add_column :bots, :profile_text_color, :string
+		add_column :bots, :profile_use_background_image, :boolean
+		add_column :bots, :has_extended_profile, :boolean
+		add_column :bots, :default_profile, :boolean
+		add_column :bots, :default_profile_image, :boolean
+		add_column :bots, :translator_type, :string
+  end
+end

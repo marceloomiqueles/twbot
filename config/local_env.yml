@@ -1,0 +1,8 @@
+DEV_DB_NAME: 'projects_twbot'
+DEV_DB_USER: 'root'
+DEV_DB_PASSWORD: 'lasclaves'
+PROD_DB_NAME: 'projects_twbot'
+PROD_DB_USER: 'root'
+PROD_DB_PASSWORD: 'lasclaves'
+TW_CONSUMER_KEY: 'zHAllMukGOc4po4TKwVUpKsyo'
+TW_CONSUMER_SECRET: 'CjaTxq9aiMWmYl1F0nVh4i9rU8Z8K5hzVke7lxsBXP27hVtWY1'

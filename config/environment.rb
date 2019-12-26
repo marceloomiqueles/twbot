@@ -6,6 +6,6 @@ Twbot::Application.initialize!
 
 
 # Globales
-NOMBRE_APP = "Botrodpalacios"
-EMPRESA = "Fibradigital"
-URL_EMPRESA = "http://fibradigital.com"
+NOMBRE_APP = "TwBot"
+EMPRESA = "PaperCode"
+URL_EMPRESA = "http://www.papercode.cl"

@@ -1,5 +1,5 @@
 class CiudadesController < ApplicationController
-  before_filter :recuperar_ciudad, :only => [:editar, :actualizar, :eliminar]
+  before_action :recuperar_ciudad, :only => [:editar, :actualizar, :eliminar]
 
   def recuperar_ciudad
     @ciudad = Ciudad.find(params[:id])
@@ -14,7 +14,7 @@ class CiudadesController < ApplicationController
   end
 
   def guardar
-    @ciudad = Ciudad.new(params[:ciudad])
+    @ciudad = Ciudad.new(ciudad_params)
     if @ciudad.valid?
       @ciudad.save
       redirect_to(ciudades_path, :notice => "Nueva Ciudad Agregada")
@@ -28,7 +28,7 @@ class CiudadesController < ApplicationController
   end
 
   def actualizar
-    if @ciudad.update_attributes(params[:ciudad])
+    if @ciudad.update_attributes(ciudad_params)
       redirect_to(ciudades_path, :notice => "Ciudad Actualizada")
     else
       flash[:error] = "Error en los datos ingresados"
@@ -40,4 +40,9 @@ class CiudadesController < ApplicationController
     @ciudad.destroy
     redirect_to(ciudades_path, :notice => "Ciudad Eliminada")
   end
+  
+  private
+    def ciudad_params
+      params.require(:ciudad).permit(:nombre, :longitud, :latitud, :km)
+    end
 end

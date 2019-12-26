@@ -1,0 +1,3356 @@
+------------------------------------------------------------------------
+Inicio Log - Tue, 09/07/2013, 23:04:00
+---------------------------
+Palabras
+Query: SELECT * FROM palabras WHERE bot_id = '19';
+Array
+(
+    [1] => #FollowBackDeChilenosCagaosDeFrío
+    [2] => #21días
+    [3] => #ConLosAñosAprendí
+    [4] => Axel Kaiser
+    [5] => Kast
+)
+
+---------------------------\Ciudades:
+Array
+(
+    [1] => Array
+        (
+            [nombre] => Santiago
+            [longitud] => -33.416667
+            [latitud] => -70.55
+            [km] => 50
+        )
+
+    [2] => Array
+        (
+            [nombre] => STGO
+            [longitud] => -70.641997
+            [latitud] => -33.4691199
+            [km] => 100
+        )
+
+    [3] => Array
+        (
+            [nombre] => Concepción
+            [longitud] => -29.906301
+            [latitud] => -71.250204
+            [km] => 100
+        )
+
+    [4] => Array
+        (
+            [nombre] => Valparaiso
+            [longitud] => -71.62725
+            [latitud] => -33.03932
+            [km] => 100
+        )
+
+    [5] => Array
+        (
+            [nombre] => Buenos Aires
+            [longitud] => -34.6037232
+            [latitud] => -58.3815931
+            [km] => 100
+        )
+
+    [6] => Array
+        (
+            [nombre] => Madrid
+            [longitud] => -3.7003454
+            [latitud] => 40.4166909
+            [km] => 100
+        )
+
+    [7] => Array
+        (
+            [nombre] => Barcelona
+            [longitud] => 2.1699187
+            [latitud] => 41.387917
+            [km] => 100
+        )
+
+    [8] => Array
+        (
+            [nombre] => Baires
+            [longitud] => -58.3815931
+            [latitud] => -34.6037232
+            [km] => 100
+        )
+
+    [9] => Array
+        (
+            [nombre] => Ciudad de México
+            [longitud] => 19.4326077
+            [latitud] => -99.133208
+            [km] => 100
+        )
+
+    [10] => Array
+        (
+            [nombre] => Guadalajara
+            [longitud] => -103.343803
+            [latitud] => 20.67359
+            [km] => 100
+        )
+
+    [11] => Array
+        (
+            [nombre] => Caracas
+            [longitud] => -66.902061
+            [latitud] => 10.491016
+            [km] => 100
+        )
+
+    [12] => Array
+        (
+            [nombre] => La Serena
+            [longitud] => -36.818938
+            [latitud] => -73.050319
+            [km] => 100
+        )
+
+    [13] => Array
+        (
+            [nombre] => Temuco
+            [longitud] => -18.477044
+            [latitud] => -70.314533
+            [km] => 100
+        )
+
+    [14] => Array
+        (
+            [nombre] => Antofagasta
+            [longitud] => -35.675147
+            [latitud] => -71.542969
+            [km] => 100
+        )
+
+    [15] => Array
+        (
+            [nombre] => Iquique
+            [longitud] => -23.65
+            [latitud] => -70.4
+            [km] => 100
+        )
+
+    [16] => Array
+        (
+            [nombre] => Valdivia
+            [longitud] => -38.73383
+            [latitud] => -72.584496
+            [km] => 100
+        )
+
+    [17] => Array
+        (
+            [nombre] => Puerto Montt
+            [longitud] => -39.819586
+            [latitud] => -73.24521
+            [km] => 100
+        )
+
+    [18] => Array
+        (
+            [nombre] => Punta Arenas
+            [longitud] => -45.56974
+            [latitud] => -72.065773
+            [km] => 100
+        )
+
+    [19] => Array
+        (
+            [nombre] => Bogota
+            [longitud] => 4.5980556 
+            [latitud] => -74.0758333
+            [km] => 100
+        )
+
+    [20] => Array
+        (
+            [nombre] => Santa Cruz
+            [longitud] => -71.359212
+            [latitud] => -34.632421
+            [km] => 100
+        )
+
+    [21] => Array
+        (
+            [nombre] => Monterrey
+            [longitud] => -100.309201
+            [latitud] => 25.6732109
+            [km] => 100
+        )
+
+    [22] => Array
+        (
+            [nombre] => Ciudad de México
+            [longitud] => 19.4326077
+            [latitud] => -99.133208
+            [km] => 100
+        )
+
+    [23] => Array
+        (
+            [nombre] => buenos aires, argentina
+            [longitud] => -34.6037232
+            [latitud] => -58.3815931
+            [km] => 100
+        )
+
+)
+
+--------------------
+Geo Punto: -39.819586,-73.24521,100km
+-----------------
+Pagina: 1
+
+ ERROR: exception 'TwitterException' with message 'The Twitter REST API v1 is no longer active. Please migrate to API v1.1. https://dev.twitter.com/docs/api/1.1/overview.' in /home/rpalacios/twbot/bot/twitter.php:673
+Stack trace:
+#0 /home/rpalacios/twbot/bot/twitter.php(2614): Twitter->doSearchCall('search.json', Array)
+#1 /home/rpalacios/twbot/bot/follow.php(99): Twitter->search('#ConLosA??osApr...', NULL, NULL, 100, 1, NULL, NULL, '-39.819586,-73....', true, NULL)
+#2 {main}
+
+-------------------
+Cantidad Seguidos: 3868
+---------------------------
+Palabras
+Query: SELECT * FROM palabras WHERE bot_id = '25';
+Array
+(
+    [1] => Egipto
+    [2] => Stgo
+    [3] => #KCAMÉXICO
+    [4] => Santiago Poniente
+    [5] => #HistoriasTristesDeNuestroFútbol
+    [6] => Darío Franco
+    [7] => #YoYEsasGanasDe
+    [8] => #Iquique
+    [9] => Chile
+    [10] => #CocaColaFMTeLlevaAOneDirection
+)
+
+---------------------------\Ciudades:
+Array
+(
+    [1] => Array
+        (
+            [nombre] => Santiago
+            [longitud] => -33.416667
+            [latitud] => -70.55
+            [km] => 50
+        )
+
+    [2] => Array
+        (
+            [nombre] => rancagua
+            [longitud] => -34.1681015
+            [latitud] => -70.73897490000002
+            [km] => 30
+        )
+
+    [3] => Array
+        (
+            [nombre] => Concepción
+            [longitud] => -29.906301
+            [latitud] => -71.250204
+            [km] => 100
+        )
+
+    [4] => Array
+        (
+            [nombre] => La Serena
+            [longitud] => -36.818938
+            [latitud] => -73.050319
+            [km] => 100
+        )
+
+    [5] => Array
+        (
+            [nombre] => Temuco
+            [longitud] => -18.477044
+            [latitud] => -70.314533
+            [km] => 100
+        )
+
+    [6] => Array
+        (
+            [nombre] => Antofagasta
+            [longitud] => -35.675147
+            [latitud] => -71.542969
+            [km] => 100
+        )
+
+    [7] => Array
+        (
+            [nombre] => Iquique
+            [longitud] => -23.65
+            [latitud] => -70.4
+            [km] => 100
+        )
+
+    [8] => Array
+        (
+            [nombre] => Valdivia
+            [longitud] => -38.73383
+            [latitud] => -72.584496
+            [km] => 100
+        )
+
+    [9] => Array
+        (
+            [nombre] => Punta Arenas
+            [longitud] => -45.56974
+            [latitud] => -72.065773
+            [km] => 100
+        )
+
+    [10] => Array
+        (
+            [nombre] => Puerto Montt
+            [longitud] => -39.819586
+            [latitud] => -73.24521
+            [km] => 100
+        )
+
+    [11] => Array
+        (
+            [nombre] => Valparaiso
+            [longitud] => -71.62725
+            [latitud] => -33.03932
+            [km] => 100
+        )
+
+    [12] => Array
+        (
+            [nombre] => STGO
+            [longitud] => -70.641997
+            [latitud] => -33.4691199
+            [km] => 100
+        )
+
+    [13] => Array
+        (
+            [nombre] => providencia
+            [longitud] => -33.4346439
+            [latitud] => -70.61580350000003
+            [km] => 3
+        )
+
+    [14] => Array
+        (
+            [nombre] => vitacura
+            [longitud] => -33.3774874
+            [latitud] => -70.5623708
+            [km] => 5
+        )
+
+    [15] => Array
+        (
+            [nombre] => viña del mar
+            [longitud] => -33.024527
+            [latitud] => -71.55234000000002
+            [km] => 30
+        )
+
+    [16] => Array
+        (
+            [nombre] => concepcion
+            [longitud] => -36.8188831
+            [latitud] => -73.05035550000002
+            [km] => 100
+        )
+
+    [17] => Array
+        (
+            [nombre] => vita
+            [longitud] => -33.3833
+            [latitud] => -70.575
+            [km] => 5
+        )
+
+)
+
+--------------------
+Geo Punto: -33.3833,-70.575,5km
+-----------------
+Pagina: 1
+
+ ERROR: exception 'TwitterException' with message 'The Twitter REST API v1 is no longer active. Please migrate to API v1.1. https://dev.twitter.com/docs/api/1.1/overview.' in /home/rpalacios/twbot/bot/twitter.php:673
+Stack trace:
+#0 /home/rpalacios/twbot/bot/twitter.php(2614): Twitter->doSearchCall('search.json', Array)
+#1 /home/rpalacios/twbot/bot/follow.php(99): Twitter->search('#YoYEsasGanasDe', NULL, NULL, 100, 1, NULL, NULL, '-33.3833,-70.57...', true, NULL)
+#2 {main}
+
+-------------------
+Cantidad Seguidos: 7416
+---------------------------
+Palabras
+Query: SELECT * FROM palabras WHERE bot_id = '26';
+Array
+(
+    [1] => Egipto
+    [2] => Stgo
+    [3] => #KCAMÉXICO
+    [4] => Santiago Poniente
+    [5] => #HistoriasTristesDeNuestroFútbol
+    [6] => Darío Franco
+    [7] => #YoYEsasGanasDe
+    [8] => #Iquique
+    [9] => Chile
+    [10] => #CocaColaFMTeLlevaAOneDirection
+)
+
+---------------------------\Ciudades:
+Array
+(
+    [1] => Array
+        (
+            [nombre] => Santiago
+            [longitud] => -33.416667
+            [latitud] => -70.55
+            [km] => 50
+        )
+
+    [2] => Array
+        (
+            [nombre] => vitacura
+            [longitud] => -33.3774874
+            [latitud] => -70.5623708
+            [km] => 5
+        )
+
+    [3] => Array
+        (
+            [nombre] => viña del mar
+            [longitud] => -33.024527
+            [latitud] => -71.55234000000002
+            [km] => 30
+        )
+
+    [4] => Array
+        (
+            [nombre] => LB 1
+            [longitud] => -33.35
+            [latitud] => -70.516667
+            [km] => 5
+        )
+
+    [5] => Array
+        (
+            [nombre] => LB 2
+            [longitud] => -70.516667
+            [latitud] => -33.35
+            [km] => 5
+        )
+
+    [6] => Array
+        (
+            [nombre] => vita
+            [longitud] => -33.3833
+            [latitud] => -70.575
+            [km] => 5
+        )
+
+    [7] => Array
+        (
+            [nombre] => Alonso de Cordova
+            [longitud] => -33.4044069
+            [latitud] => -70.583879
+            [km] => 2
+        )
+
+    [8] => Array
+        (
+            [nombre] => Los Dominicos
+            [longitud] => -33.4131146
+            [latitud] => -70.5478406
+            [km] => 5
+        )
+
+    [9] => Array
+        (
+            [nombre] => San Carlos de Apoquindo
+            [longitud] => -33.3948886
+            [latitud] => -70.5222636
+            [km] => 5
+        )
+
+    [10] => Array
+        (
+            [nombre] => Los Trapenses
+            [longitud] => -33.3401338
+            [latitud] => -70.5458052
+            [km] => 7
+        )
+
+    [11] => Array
+        (
+            [nombre] => Portal La Dehesa
+            [longitud] => -33.358401
+            [latitud] => -70.5171512
+            [km] => 1
+        )
+
+    [12] => Array
+        (
+            [nombre] => Parque Arauco
+            [longitud] => -33.4019825
+            [latitud] => -70.5805137
+            [km] => 3
+        )
+
+    [13] => Array
+        (
+            [nombre] => Alto Las Condes
+            [longitud] => -33.388825
+            [latitud] => -70.5452714
+            [km] => 2
+        )
+
+    [14] => Array
+        (
+            [nombre] => lo curro
+            [longitud] => -33.3780286
+            [latitud] => -70.5695189
+            [km] => 2
+        )
+
+    [15] => Array
+        (
+            [nombre] => Costanera Center
+            [longitud] => -33.4179083
+            [latitud] => -70.6084547
+            [km] => 3
+        )
+
+)
+
+--------------------
+Geo Punto: -33.3780286,-70.5695189,2km
+-----------------
+Pagina: 1
+
+ ERROR: exception 'TwitterException' with message 'The Twitter REST API v1 is no longer active. Please migrate to API v1.1. https://dev.twitter.com/docs/api/1.1/overview.' in /home/rpalacios/twbot/bot/twitter.php:673
+Stack trace:
+#0 /home/rpalacios/twbot/bot/twitter.php(2614): Twitter->doSearchCall('search.json', Array)
+#1 /home/rpalacios/twbot/bot/follow.php(99): Twitter->search('#YoYEsasGanasDe', NULL, NULL, 100, 1, NULL, NULL, '-33.3780286,-70...', true, NULL)
+#2 {main}
+
+-------------------
+Cantidad Seguidos: 5166
+---------------------------
+Palabras
+Query: SELECT * FROM palabras WHERE bot_id = '28';
+Array
+(
+    [1] => Egipto
+    [2] => Stgo
+    [3] => #KCAMÉXICO
+    [4] => Santiago Poniente
+    [5] => #HistoriasTristesDeNuestroFútbol
+    [6] => Darío Franco
+    [7] => #YoYEsasGanasDe
+    [8] => #Iquique
+    [9] => #CocaColaFMTeLlevaAOneDirection
+    [10] => Chile
+)
+
+---------------------------\Ciudades:
+Array
+(
+    [1] => Array
+        (
+            [nombre] => Santiago
+            [longitud] => -33.416667
+            [latitud] => -70.55
+            [km] => 50
+        )
+
+    [2] => Array
+        (
+            [nombre] => Concepción
+            [longitud] => -29.906301
+            [latitud] => -71.250204
+            [km] => 100
+        )
+
+    [3] => Array
+        (
+            [nombre] => La Serena
+            [longitud] => -36.818938
+            [latitud] => -73.050319
+            [km] => 100
+        )
+
+    [4] => Array
+        (
+            [nombre] => Temuco
+            [longitud] => -18.477044
+            [latitud] => -70.314533
+            [km] => 100
+        )
+
+    [5] => Array
+        (
+            [nombre] => Temuco
+            [longitud] => -18.477044
+            [latitud] => -70.314533
+            [km] => 100
+        )
+
+    [6] => Array
+        (
+            [nombre] => Temuco
+            [longitud] => -18.477044
+            [latitud] => -70.314533
+            [km] => 100
+        )
+
+    [7] => Array
+        (
+            [nombre] => Temuco
+            [longitud] => -18.477044
+            [latitud] => -70.314533
+            [km] => 100
+        )
+
+    [8] => Array
+        (
+            [nombre] => Temuco
+            [longitud] => -18.477044
+            [latitud] => -70.314533
+            [km] => 100
+        )
+
+    [9] => Array
+        (
+            [nombre] => Temuco
+            [longitud] => -18.477044
+            [latitud] => -70.314533
+            [km] => 100
+        )
+
+    [10] => Array
+        (
+            [nombre] => Temuco
+            [longitud] => -18.477044
+            [latitud] => -70.314533
+            [km] => 100
+        )
+
+    [11] => Array
+        (
+            [nombre] => Temuco
+            [longitud] => -18.477044
+            [latitud] => -70.314533
+            [km] => 100
+        )
+
+    [12] => Array
+        (
+            [nombre] => Temuco
+            [longitud] => -18.477044
+            [latitud] => -70.314533
+            [km] => 100
+        )
+
+    [13] => Array
+        (
+            [nombre] => Temuco
+            [longitud] => -18.477044
+            [latitud] => -70.314533
+            [km] => 100
+        )
+
+    [14] => Array
+        (
+            [nombre] => Temuco
+            [longitud] => -18.477044
+            [latitud] => -70.314533
+            [km] => 100
+        )
+
+    [15] => Array
+        (
+            [nombre] => Antofagasta
+            [longitud] => -35.675147
+            [latitud] => -71.542969
+            [km] => 100
+        )
+
+    [16] => Array
+        (
+            [nombre] => Antofagasta
+            [longitud] => -35.675147
+            [latitud] => -71.542969
+            [km] => 100
+        )
+
+    [17] => Array
+        (
+            [nombre] => Iquique
+            [longitud] => -23.65
+            [latitud] => -70.4
+            [km] => 100
+        )
+
+    [18] => Array
+        (
+            [nombre] => Valdivia
+            [longitud] => -38.73383
+            [latitud] => -72.584496
+            [km] => 100
+        )
+
+    [19] => Array
+        (
+            [nombre] => Puerto Montt
+            [longitud] => -39.819586
+            [latitud] => -73.24521
+            [km] => 100
+        )
+
+    [20] => Array
+        (
+            [nombre] => Punta Arenas
+            [longitud] => -45.56974
+            [latitud] => -72.065773
+            [km] => 100
+        )
+
+    [21] => Array
+        (
+            [nombre] => Valparaiso
+            [longitud] => -71.62725
+            [latitud] => -33.03932
+            [km] => 100
+        )
+
+    [22] => Array
+        (
+            [nombre] => Buenos Aires
+            [longitud] => -34.6037232
+            [latitud] => -58.3815931
+            [km] => 100
+        )
+
+    [23] => Array
+        (
+            [nombre] => Madrid
+            [longitud] => -3.7003454
+            [latitud] => 40.4166909
+            [km] => 100
+        )
+
+    [24] => Array
+        (
+            [nombre] => Madrid
+            [longitud] => -3.7003454
+            [latitud] => 40.4166909
+            [km] => 100
+        )
+
+    [25] => Array
+        (
+            [nombre] => Madrid
+            [longitud] => -3.7003454
+            [latitud] => 40.4166909
+            [km] => 100
+        )
+
+    [26] => Array
+        (
+            [nombre] => Barcelona
+            [longitud] => 2.1699187
+            [latitud] => 41.387917
+            [km] => 100
+        )
+
+    [27] => Array
+        (
+            [nombre] => Caracas
+            [longitud] => -66.902061
+            [latitud] => 10.491016
+            [km] => 100
+        )
+
+    [28] => Array
+        (
+            [nombre] => Caracas
+            [longitud] => -66.902061
+            [latitud] => 10.491016
+            [km] => 100
+        )
+
+    [29] => Array
+        (
+            [nombre] => Guadalajara
+            [longitud] => -103.343803
+            [latitud] => 20.67359
+            [km] => 100
+        )
+
+    [30] => Array
+        (
+            [nombre] => Bogota
+            [longitud] => 4.5980556 
+            [latitud] => -74.0758333
+            [km] => 100
+        )
+
+    [31] => Array
+        (
+            [nombre] => Baires
+            [longitud] => -58.3815931
+            [latitud] => -34.6037232
+            [km] => 100
+        )
+
+    [32] => Array
+        (
+            [nombre] => Santa Cruz
+            [longitud] => -71.359212
+            [latitud] => -34.632421
+            [km] => 100
+        )
+
+    [33] => Array
+        (
+            [nombre] => Monterrey
+            [longitud] => -100.309201
+            [latitud] => 25.6732109
+            [km] => 100
+        )
+
+    [34] => Array
+        (
+            [nombre] => STGO
+            [longitud] => -70.641997
+            [latitud] => -33.4691199
+            [km] => 100
+        )
+
+    [35] => Array
+        (
+            [nombre] => Ciudad de México
+            [longitud] => 19.4326077
+            [latitud] => -99.133208
+            [km] => 100
+        )
+
+    [36] => Array
+        (
+            [nombre] => Ciudad de México
+            [longitud] => 19.4326077
+            [latitud] => -99.133208
+            [km] => 100
+        )
+
+    [37] => Array
+        (
+            [nombre] => buenos aires, argentina
+            [longitud] => -34.6037232
+            [latitud] => -58.3815931
+            [km] => 100
+        )
+
+    [38] => Array
+        (
+            [nombre] => vitacura
+            [longitud] => -33.3774874
+            [latitud] => -70.5623708
+            [km] => 5
+        )
+
+    [39] => Array
+        (
+            [nombre] => providencia
+            [longitud] => -33.4346439
+            [latitud] => -70.61580350000003
+            [km] => 3
+        )
+
+    [40] => Array
+        (
+            [nombre] => viña del mar
+            [longitud] => -33.024527
+            [latitud] => -71.55234000000002
+            [km] => 30
+        )
+
+    [41] => Array
+        (
+            [nombre] => la recoleta
+            [longitud] => -34.5905438
+            [latitud] => -58.39057230000003
+            [km] => 20
+        )
+
+    [42] => Array
+        (
+            [nombre] => palermo chico
+            [longitud] => -34.5851635
+            [latitud] => -58.42671259999997
+            [km] => 10
+        )
+
+    [43] => Array
+        (
+            [nombre] => concepcion
+            [longitud] => -36.8188831
+            [latitud] => -73.05035550000002
+            [km] => 100
+        )
+
+    [44] => Array
+        (
+            [nombre] => rancagua
+            [longitud] => -34.1681015
+            [latitud] => -70.73897490000002
+            [km] => 30
+        )
+
+)
+
+--------------------
+Geo Punto: -39.819586,-73.24521,100km
+-----------------
+Pagina: 1
+
+ ERROR: exception 'TwitterException' with message 'The Twitter REST API v1 is no longer active. Please migrate to API v1.1. https://dev.twitter.com/docs/api/1.1/overview.' in /home/rpalacios/twbot/bot/twitter.php:673
+Stack trace:
+#0 /home/rpalacios/twbot/bot/twitter.php(2614): Twitter->doSearchCall('search.json', Array)
+#1 /home/rpalacios/twbot/bot/follow.php(99): Twitter->search('Santiago Ponien...', NULL, NULL, 100, 1, NULL, NULL, '-39.819586,-73....', true, NULL)
+#2 {main}
+
+-------------------
+Cantidad Seguidos: 4939
+---------------------------
+Palabras
+Query: SELECT * FROM palabras WHERE bot_id = '30';
+Array
+(
+    [1] => #SoyDeLosQue
+    [2] => #FollowBackDeChilenosCagaosDeFrío
+    [3] => #21días
+    [4] => #PartyHardEnLaCasaDeMagnus
+    [5] => #ConLosAñosAprendí
+)
+
+---------------------------\Ciudades:
+Array
+(
+    [1] => Array
+        (
+            [nombre] => Santiago
+            [longitud] => -33.416667
+            [latitud] => -70.55
+            [km] => 50
+        )
+
+    [2] => Array
+        (
+            [nombre] => Concepción
+            [longitud] => -29.906301
+            [latitud] => -71.250204
+            [km] => 100
+        )
+
+    [3] => Array
+        (
+            [nombre] => La Serena
+            [longitud] => -36.818938
+            [latitud] => -73.050319
+            [km] => 100
+        )
+
+    [4] => Array
+        (
+            [nombre] => Temuco
+            [longitud] => -18.477044
+            [latitud] => -70.314533
+            [km] => 100
+        )
+
+    [5] => Array
+        (
+            [nombre] => Antofagasta
+            [longitud] => -35.675147
+            [latitud] => -71.542969
+            [km] => 100
+        )
+
+    [6] => Array
+        (
+            [nombre] => Iquique
+            [longitud] => -23.65
+            [latitud] => -70.4
+            [km] => 100
+        )
+
+    [7] => Array
+        (
+            [nombre] => Valdivia
+            [longitud] => -38.73383
+            [latitud] => -72.584496
+            [km] => 100
+        )
+
+    [8] => Array
+        (
+            [nombre] => Puerto Montt
+            [longitud] => -39.819586
+            [latitud] => -73.24521
+            [km] => 100
+        )
+
+    [9] => Array
+        (
+            [nombre] => Punta Arenas
+            [longitud] => -45.56974
+            [latitud] => -72.065773
+            [km] => 100
+        )
+
+    [10] => Array
+        (
+            [nombre] => Valparaiso
+            [longitud] => -71.62725
+            [latitud] => -33.03932
+            [km] => 100
+        )
+
+    [11] => Array
+        (
+            [nombre] => Buenos Aires
+            [longitud] => -34.6037232
+            [latitud] => -58.3815931
+            [km] => 100
+        )
+
+    [12] => Array
+        (
+            [nombre] => Madrid
+            [longitud] => -3.7003454
+            [latitud] => 40.4166909
+            [km] => 100
+        )
+
+    [13] => Array
+        (
+            [nombre] => Barcelona
+            [longitud] => 2.1699187
+            [latitud] => 41.387917
+            [km] => 100
+        )
+
+    [14] => Array
+        (
+            [nombre] => Caracas
+            [longitud] => -66.902061
+            [latitud] => 10.491016
+            [km] => 100
+        )
+
+    [15] => Array
+        (
+            [nombre] => Guadalajara
+            [longitud] => -103.343803
+            [latitud] => 20.67359
+            [km] => 100
+        )
+
+    [16] => Array
+        (
+            [nombre] => Bogota
+            [longitud] => 4.5980556 
+            [latitud] => -74.0758333
+            [km] => 100
+        )
+
+    [17] => Array
+        (
+            [nombre] => Baires
+            [longitud] => -58.3815931
+            [latitud] => -34.6037232
+            [km] => 100
+        )
+
+    [18] => Array
+        (
+            [nombre] => Santa Cruz
+            [longitud] => -71.359212
+            [latitud] => -34.632421
+            [km] => 100
+        )
+
+    [19] => Array
+        (
+            [nombre] => Monterrey
+            [longitud] => -100.309201
+            [latitud] => 25.6732109
+            [km] => 100
+        )
+
+    [20] => Array
+        (
+            [nombre] => STGO
+            [longitud] => -70.641997
+            [latitud] => -33.4691199
+            [km] => 100
+        )
+
+    [21] => Array
+        (
+            [nombre] => Ciudad de México
+            [longitud] => 19.4326077
+            [latitud] => -99.133208
+            [km] => 100
+        )
+
+    [22] => Array
+        (
+            [nombre] => Ciudad de México
+            [longitud] => 19.4326077
+            [latitud] => -99.133208
+            [km] => 100
+        )
+
+    [23] => Array
+        (
+            [nombre] => buenos aires, argentina
+            [longitud] => -34.6037232
+            [latitud] => -58.3815931
+            [km] => 100
+        )
+
+    [24] => Array
+        (
+            [nombre] => vitacura
+            [longitud] => -33.3774874
+            [latitud] => -70.5623708
+            [km] => 5
+        )
+
+    [25] => Array
+        (
+            [nombre] => providencia
+            [longitud] => -33.4346439
+            [latitud] => -70.61580350000003
+            [km] => 3
+        )
+
+    [26] => Array
+        (
+            [nombre] => viña del mar
+            [longitud] => -33.024527
+            [latitud] => -71.55234000000002
+            [km] => 30
+        )
+
+    [27] => Array
+        (
+            [nombre] => rancagua
+            [longitud] => -34.1681015
+            [latitud] => -70.73897490000002
+            [km] => 30
+        )
+
+    [28] => Array
+        (
+            [nombre] => concepcion
+            [longitud] => -36.8188831
+            [latitud] => -73.05035550000002
+            [km] => 100
+        )
+
+)
+
+--------------------
+Geo Punto: -66.902061,10.491016,100km
+-----------------
+Pagina: 1
+
+ ERROR: exception 'TwitterException' with message 'The Twitter REST API v1 is no longer active. Please migrate to API v1.1. https://dev.twitter.com/docs/api/1.1/overview.' in /home/rpalacios/twbot/bot/twitter.php:673
+Stack trace:
+#0 /home/rpalacios/twbot/bot/twitter.php(2614): Twitter->doSearchCall('search.json', Array)
+#1 /home/rpalacios/twbot/bot/follow.php(99): Twitter->search('#21d??as', NULL, NULL, 100, 1, NULL, NULL, '-66.902061,10.4...', true, NULL)
+#2 {main}
+
+-------------------
+Cantidad Seguidos: 12478
+---------------------------
+Palabras
+Query: SELECT * FROM palabras WHERE bot_id = '31';
+Array
+(
+    [1] => #SoyDeLosQue
+    [2] => #FollowBackDeChilenosCagaosDeFrío
+    [3] => #21días
+    [4] => #PartyHardEnLaCasaDeMagnus
+    [5] => #ConLosAñosAprendí
+    [6] => Axel Kaiser
+)
+
+---------------------------\Ciudades:
+Array
+(
+    [1] => Array
+        (
+            [nombre] => Santiago
+            [longitud] => -33.416667
+            [latitud] => -70.55
+            [km] => 50
+        )
+
+    [2] => Array
+        (
+            [nombre] => Concepción
+            [longitud] => -29.906301
+            [latitud] => -71.250204
+            [km] => 100
+        )
+
+    [3] => Array
+        (
+            [nombre] => La Serena
+            [longitud] => -36.818938
+            [latitud] => -73.050319
+            [km] => 100
+        )
+
+    [4] => Array
+        (
+            [nombre] => Temuco
+            [longitud] => -18.477044
+            [latitud] => -70.314533
+            [km] => 100
+        )
+
+    [5] => Array
+        (
+            [nombre] => Antofagasta
+            [longitud] => -35.675147
+            [latitud] => -71.542969
+            [km] => 100
+        )
+
+    [6] => Array
+        (
+            [nombre] => Iquique
+            [longitud] => -23.65
+            [latitud] => -70.4
+            [km] => 100
+        )
+
+    [7] => Array
+        (
+            [nombre] => Valdivia
+            [longitud] => -38.73383
+            [latitud] => -72.584496
+            [km] => 100
+        )
+
+    [8] => Array
+        (
+            [nombre] => Puerto Montt
+            [longitud] => -39.819586
+            [latitud] => -73.24521
+            [km] => 100
+        )
+
+    [9] => Array
+        (
+            [nombre] => Punta Arenas
+            [longitud] => -45.56974
+            [latitud] => -72.065773
+            [km] => 100
+        )
+
+    [10] => Array
+        (
+            [nombre] => Valparaiso
+            [longitud] => -71.62725
+            [latitud] => -33.03932
+            [km] => 100
+        )
+
+    [11] => Array
+        (
+            [nombre] => Buenos Aires
+            [longitud] => -34.6037232
+            [latitud] => -58.3815931
+            [km] => 100
+        )
+
+    [12] => Array
+        (
+            [nombre] => Madrid
+            [longitud] => -3.7003454
+            [latitud] => 40.4166909
+            [km] => 100
+        )
+
+    [13] => Array
+        (
+            [nombre] => Barcelona
+            [longitud] => 2.1699187
+            [latitud] => 41.387917
+            [km] => 100
+        )
+
+    [14] => Array
+        (
+            [nombre] => Caracas
+            [longitud] => -66.902061
+            [latitud] => 10.491016
+            [km] => 100
+        )
+
+    [15] => Array
+        (
+            [nombre] => Guadalajara
+            [longitud] => -103.343803
+            [latitud] => 20.67359
+            [km] => 100
+        )
+
+    [16] => Array
+        (
+            [nombre] => Bogota
+            [longitud] => 4.5980556 
+            [latitud] => -74.0758333
+            [km] => 100
+        )
+
+    [17] => Array
+        (
+            [nombre] => Baires
+            [longitud] => -58.3815931
+            [latitud] => -34.6037232
+            [km] => 100
+        )
+
+    [18] => Array
+        (
+            [nombre] => Santa Cruz
+            [longitud] => -71.359212
+            [latitud] => -34.632421
+            [km] => 100
+        )
+
+    [19] => Array
+        (
+            [nombre] => Monterrey
+            [longitud] => -100.309201
+            [latitud] => 25.6732109
+            [km] => 100
+        )
+
+    [20] => Array
+        (
+            [nombre] => STGO
+            [longitud] => -70.641997
+            [latitud] => -33.4691199
+            [km] => 100
+        )
+
+    [21] => Array
+        (
+            [nombre] => Ciudad de México
+            [longitud] => 19.4326077
+            [latitud] => -99.133208
+            [km] => 100
+        )
+
+    [22] => Array
+        (
+            [nombre] => Ciudad de México
+            [longitud] => 19.4326077
+            [latitud] => -99.133208
+            [km] => 100
+        )
+
+)
+
+--------------------
+Geo Punto: -23.65,-70.4,100km
+-----------------
+Pagina: 1
+
+ ERROR: exception 'TwitterException' with message 'The Twitter REST API v1 is no longer active. Please migrate to API v1.1. https://dev.twitter.com/docs/api/1.1/overview.' in /home/rpalacios/twbot/bot/twitter.php:673
+Stack trace:
+#0 /home/rpalacios/twbot/bot/twitter.php(2614): Twitter->doSearchCall('search.json', Array)
+#1 /home/rpalacios/twbot/bot/follow.php(99): Twitter->search('#21d??as', NULL, NULL, 100, 1, NULL, NULL, '-23.65,-70.4,10...', true, NULL)
+#2 {main}
+
+-------------------
+Cantidad Seguidos: 8133
+---------------------------
+Palabras
+Query: SELECT * FROM palabras WHERE bot_id = '32';
+Array
+(
+    [1] => #SoyDeLosQue
+    [2] => #FollowBackDeChilenosCagaosDeFrío
+    [3] => #21días
+    [4] => #PartyHardEnLaCasaDeMagnus
+    [5] => #ConLosAñosAprendí
+)
+
+---------------------------\Ciudades:
+Array
+(
+    [1] => Array
+        (
+            [nombre] => Santiago
+            [longitud] => -33.416667
+            [latitud] => -70.55
+            [km] => 50
+        )
+
+    [2] => Array
+        (
+            [nombre] => Concepción
+            [longitud] => -29.906301
+            [latitud] => -71.250204
+            [km] => 100
+        )
+
+    [3] => Array
+        (
+            [nombre] => La Serena
+            [longitud] => -36.818938
+            [latitud] => -73.050319
+            [km] => 100
+        )
+
+    [4] => Array
+        (
+            [nombre] => Temuco
+            [longitud] => -18.477044
+            [latitud] => -70.314533
+            [km] => 100
+        )
+
+    [5] => Array
+        (
+            [nombre] => Antofagasta
+            [longitud] => -35.675147
+            [latitud] => -71.542969
+            [km] => 100
+        )
+
+    [6] => Array
+        (
+            [nombre] => Iquique
+            [longitud] => -23.65
+            [latitud] => -70.4
+            [km] => 100
+        )
+
+    [7] => Array
+        (
+            [nombre] => Valdivia
+            [longitud] => -38.73383
+            [latitud] => -72.584496
+            [km] => 100
+        )
+
+    [8] => Array
+        (
+            [nombre] => Puerto Montt
+            [longitud] => -39.819586
+            [latitud] => -73.24521
+            [km] => 100
+        )
+
+    [9] => Array
+        (
+            [nombre] => Punta Arenas
+            [longitud] => -45.56974
+            [latitud] => -72.065773
+            [km] => 100
+        )
+
+    [10] => Array
+        (
+            [nombre] => Valparaiso
+            [longitud] => -71.62725
+            [latitud] => -33.03932
+            [km] => 100
+        )
+
+    [11] => Array
+        (
+            [nombre] => Buenos Aires
+            [longitud] => -34.6037232
+            [latitud] => -58.3815931
+            [km] => 100
+        )
+
+    [12] => Array
+        (
+            [nombre] => Madrid
+            [longitud] => -3.7003454
+            [latitud] => 40.4166909
+            [km] => 100
+        )
+
+    [13] => Array
+        (
+            [nombre] => Barcelona
+            [longitud] => 2.1699187
+            [latitud] => 41.387917
+            [km] => 100
+        )
+
+    [14] => Array
+        (
+            [nombre] => Caracas
+            [longitud] => -66.902061
+            [latitud] => 10.491016
+            [km] => 100
+        )
+
+    [15] => Array
+        (
+            [nombre] => Guadalajara
+            [longitud] => -103.343803
+            [latitud] => 20.67359
+            [km] => 100
+        )
+
+    [16] => Array
+        (
+            [nombre] => Bogota
+            [longitud] => 4.5980556 
+            [latitud] => -74.0758333
+            [km] => 100
+        )
+
+    [17] => Array
+        (
+            [nombre] => Baires
+            [longitud] => -58.3815931
+            [latitud] => -34.6037232
+            [km] => 100
+        )
+
+    [18] => Array
+        (
+            [nombre] => Santa Cruz
+            [longitud] => -71.359212
+            [latitud] => -34.632421
+            [km] => 100
+        )
+
+    [19] => Array
+        (
+            [nombre] => Monterrey
+            [longitud] => -100.309201
+            [latitud] => 25.6732109
+            [km] => 100
+        )
+
+    [20] => Array
+        (
+            [nombre] => STGO
+            [longitud] => -70.641997
+            [latitud] => -33.4691199
+            [km] => 100
+        )
+
+    [21] => Array
+        (
+            [nombre] => Ciudad de México
+            [longitud] => 19.4326077
+            [latitud] => -99.133208
+            [km] => 100
+        )
+
+    [22] => Array
+        (
+            [nombre] => Ciudad de México
+            [longitud] => 19.4326077
+            [latitud] => -99.133208
+            [km] => 100
+        )
+
+    [23] => Array
+        (
+            [nombre] => buenos aires, argentina
+            [longitud] => -34.6037232
+            [latitud] => -58.3815931
+            [km] => 100
+        )
+
+    [24] => Array
+        (
+            [nombre] => vitacura
+            [longitud] => -33.3774874
+            [latitud] => -70.5623708
+            [km] => 5
+        )
+
+    [25] => Array
+        (
+            [nombre] => providencia
+            [longitud] => -33.4346439
+            [latitud] => -70.61580350000003
+            [km] => 3
+        )
+
+    [26] => Array
+        (
+            [nombre] => viña del mar
+            [longitud] => -33.024527
+            [latitud] => -71.55234000000002
+            [km] => 30
+        )
+
+    [27] => Array
+        (
+            [nombre] => la recoleta
+            [longitud] => -34.5905438
+            [latitud] => -58.39057230000003
+            [km] => 20
+        )
+
+    [28] => Array
+        (
+            [nombre] => palermo chico
+            [longitud] => -34.5851635
+            [latitud] => -58.42671259999997
+            [km] => 10
+        )
+
+    [29] => Array
+        (
+            [nombre] => concepcion
+            [longitud] => -36.8188831
+            [latitud] => -73.05035550000002
+            [km] => 100
+        )
+
+    [30] => Array
+        (
+            [nombre] => rancagua
+            [longitud] => -34.1681015
+            [latitud] => -70.73897490000002
+            [km] => 30
+        )
+
+)
+
+--------------------
+Geo Punto: -35.675147,-71.542969,100km
+-----------------
+Pagina: 1
+
+ ERROR: exception 'TwitterException' with message 'The Twitter REST API v1 is no longer active. Please migrate to API v1.1. https://dev.twitter.com/docs/api/1.1/overview.' in /home/rpalacios/twbot/bot/twitter.php:673
+Stack trace:
+#0 /home/rpalacios/twbot/bot/twitter.php(2614): Twitter->doSearchCall('search.json', Array)
+#1 /home/rpalacios/twbot/bot/follow.php(99): Twitter->search('#PartyHardEnLaC...', NULL, NULL, 100, 1, NULL, NULL, '-35.675147,-71....', true, NULL)
+#2 {main}
+
+-------------------
+Cantidad Seguidos: 21895
+-----------------------------------------------
+
+
+Encontrados:
+Array
+(
+)
+
+
+Fin del proceso: Tue, 09/07/2013, 23:04:03
+
+Guardando log...
+
+
+------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------
+
+
+------------------------------------------------------------------------
+Inicio Log - Tue, 09/07/2013, 23:08:12
+---------------------------
+Palabras
+Query: SELECT * FROM palabras WHERE bot_id = '19';
+Array
+(
+    [1] => #FollowBackDeChilenosCagaosDeFrío
+    [2] => #21días
+    [3] => #ConLosAñosAprendí
+    [4] => Axel Kaiser
+    [5] => Kast
+)
+
+---------------------------\Ciudades:
+Array
+(
+    [1] => Array
+        (
+            [nombre] => Santiago
+            [longitud] => -33.416667
+            [latitud] => -70.55
+            [km] => 50
+        )
+
+    [2] => Array
+        (
+            [nombre] => STGO
+            [longitud] => -70.641997
+            [latitud] => -33.4691199
+            [km] => 100
+        )
+
+    [3] => Array
+        (
+            [nombre] => Concepción
+            [longitud] => -29.906301
+            [latitud] => -71.250204
+            [km] => 100
+        )
+
+    [4] => Array
+        (
+            [nombre] => Valparaiso
+            [longitud] => -71.62725
+            [latitud] => -33.03932
+            [km] => 100
+        )
+
+    [5] => Array
+        (
+            [nombre] => Buenos Aires
+            [longitud] => -34.6037232
+            [latitud] => -58.3815931
+            [km] => 100
+        )
+
+    [6] => Array
+        (
+            [nombre] => Madrid
+            [longitud] => -3.7003454
+            [latitud] => 40.4166909
+            [km] => 100
+        )
+
+    [7] => Array
+        (
+            [nombre] => Barcelona
+            [longitud] => 2.1699187
+            [latitud] => 41.387917
+            [km] => 100
+        )
+
+    [8] => Array
+        (
+            [nombre] => Baires
+            [longitud] => -58.3815931
+            [latitud] => -34.6037232
+            [km] => 100
+        )
+
+    [9] => Array
+        (
+            [nombre] => Ciudad de México
+            [longitud] => 19.4326077
+            [latitud] => -99.133208
+            [km] => 100
+        )
+
+    [10] => Array
+        (
+            [nombre] => Guadalajara
+            [longitud] => -103.343803
+            [latitud] => 20.67359
+            [km] => 100
+        )
+
+    [11] => Array
+        (
+            [nombre] => Caracas
+            [longitud] => -66.902061
+            [latitud] => 10.491016
+            [km] => 100
+        )
+
+    [12] => Array
+        (
+            [nombre] => La Serena
+            [longitud] => -36.818938
+            [latitud] => -73.050319
+            [km] => 100
+        )
+
+    [13] => Array
+        (
+            [nombre] => Temuco
+            [longitud] => -18.477044
+            [latitud] => -70.314533
+            [km] => 100
+        )
+
+    [14] => Array
+        (
+            [nombre] => Antofagasta
+            [longitud] => -35.675147
+            [latitud] => -71.542969
+            [km] => 100
+        )
+
+    [15] => Array
+        (
+            [nombre] => Iquique
+            [longitud] => -23.65
+            [latitud] => -70.4
+            [km] => 100
+        )
+
+    [16] => Array
+        (
+            [nombre] => Valdivia
+            [longitud] => -38.73383
+            [latitud] => -72.584496
+            [km] => 100
+        )
+
+    [17] => Array
+        (
+            [nombre] => Puerto Montt
+            [longitud] => -39.819586
+            [latitud] => -73.24521
+            [km] => 100
+        )
+
+    [18] => Array
+        (
+            [nombre] => Punta Arenas
+            [longitud] => -45.56974
+            [latitud] => -72.065773
+            [km] => 100
+        )
+
+    [19] => Array
+        (
+            [nombre] => Bogota
+            [longitud] => 4.5980556 
+            [latitud] => -74.0758333
+            [km] => 100
+        )
+
+    [20] => Array
+        (
+            [nombre] => Santa Cruz
+            [longitud] => -71.359212
+            [latitud] => -34.632421
+            [km] => 100
+        )
+
+    [21] => Array
+        (
+            [nombre] => Monterrey
+            [longitud] => -100.309201
+            [latitud] => 25.6732109
+            [km] => 100
+        )
+
+    [22] => Array
+        (
+            [nombre] => Ciudad de México
+            [longitud] => 19.4326077
+            [latitud] => -99.133208
+            [km] => 100
+        )
+
+    [23] => Array
+        (
+            [nombre] => buenos aires, argentina
+            [longitud] => -34.6037232
+            [latitud] => -58.3815931
+            [km] => 100
+        )
+
+)
+
+--------------------
+Geo Punto: -45.56974,-72.065773,100km
+-----------------
+Pagina: 1
+
+ ERROR: exception 'TwitterException' with message 'The Twitter REST API v1 is no longer active. Please migrate to API v1.1. https://dev.twitter.com/docs/api/1.1/overview.' in /home/rpalacios/twbot/bot/twitter.php:673
+Stack trace:
+#0 /home/rpalacios/twbot/bot/twitter.php(2614): Twitter->doSearchCall('search.json', Array)
+#1 /home/rpalacios/twbot/bot/follow.php(99): Twitter->search('Axel Kaiser', NULL, NULL, 100, 1, NULL, NULL, '-45.56974,-72.0...', true, NULL)
+#2 {main}
+
+-------------------
+Cantidad Seguidos: 3868
+---------------------------
+Palabras
+Query: SELECT * FROM palabras WHERE bot_id = '25';
+Array
+(
+    [1] => Egipto
+    [2] => Stgo
+    [3] => #KCAMÉXICO
+    [4] => Santiago Poniente
+    [5] => #HistoriasTristesDeNuestroFútbol
+    [6] => Darío Franco
+    [7] => #YoYEsasGanasDe
+    [8] => #Iquique
+    [9] => Chile
+    [10] => #CocaColaFMTeLlevaAOneDirection
+)
+
+---------------------------\Ciudades:
+Array
+(
+    [1] => Array
+        (
+            [nombre] => Santiago
+            [longitud] => -33.416667
+            [latitud] => -70.55
+            [km] => 50
+        )
+
+    [2] => Array
+        (
+            [nombre] => rancagua
+            [longitud] => -34.1681015
+            [latitud] => -70.73897490000002
+            [km] => 30
+        )
+
+    [3] => Array
+        (
+            [nombre] => Concepción
+            [longitud] => -29.906301
+            [latitud] => -71.250204
+            [km] => 100
+        )
+
+    [4] => Array
+        (
+            [nombre] => La Serena
+            [longitud] => -36.818938
+            [latitud] => -73.050319
+            [km] => 100
+        )
+
+    [5] => Array
+        (
+            [nombre] => Temuco
+            [longitud] => -18.477044
+            [latitud] => -70.314533
+            [km] => 100
+        )
+
+    [6] => Array
+        (
+            [nombre] => Antofagasta
+            [longitud] => -35.675147
+            [latitud] => -71.542969
+            [km] => 100
+        )
+
+    [7] => Array
+        (
+            [nombre] => Iquique
+            [longitud] => -23.65
+            [latitud] => -70.4
+            [km] => 100
+        )
+
+    [8] => Array
+        (
+            [nombre] => Valdivia
+            [longitud] => -38.73383
+            [latitud] => -72.584496
+            [km] => 100
+        )
+
+    [9] => Array
+        (
+            [nombre] => Punta Arenas
+            [longitud] => -45.56974
+            [latitud] => -72.065773
+            [km] => 100
+        )
+
+    [10] => Array
+        (
+            [nombre] => Puerto Montt
+            [longitud] => -39.819586
+            [latitud] => -73.24521
+            [km] => 100
+        )
+
+    [11] => Array
+        (
+            [nombre] => Valparaiso
+            [longitud] => -71.62725
+            [latitud] => -33.03932
+            [km] => 100
+        )
+
+    [12] => Array
+        (
+            [nombre] => STGO
+            [longitud] => -70.641997
+            [latitud] => -33.4691199
+            [km] => 100
+        )
+
+    [13] => Array
+        (
+            [nombre] => providencia
+            [longitud] => -33.4346439
+            [latitud] => -70.61580350000003
+            [km] => 3
+        )
+
+    [14] => Array
+        (
+            [nombre] => vitacura
+            [longitud] => -33.3774874
+            [latitud] => -70.5623708
+            [km] => 5
+        )
+
+    [15] => Array
+        (
+            [nombre] => viña del mar
+            [longitud] => -33.024527
+            [latitud] => -71.55234000000002
+            [km] => 30
+        )
+
+    [16] => Array
+        (
+            [nombre] => concepcion
+            [longitud] => -36.8188831
+            [latitud] => -73.05035550000002
+            [km] => 100
+        )
+
+    [17] => Array
+        (
+            [nombre] => vita
+            [longitud] => -33.3833
+            [latitud] => -70.575
+            [km] => 5
+        )
+
+)
+
+--------------------
+Geo Punto: -33.416667,-70.55,50km
+-----------------
+Pagina: 1
+
+ ERROR: exception 'TwitterException' with message 'The Twitter REST API v1 is no longer active. Please migrate to API v1.1. https://dev.twitter.com/docs/api/1.1/overview.' in /home/rpalacios/twbot/bot/twitter.php:673
+Stack trace:
+#0 /home/rpalacios/twbot/bot/twitter.php(2614): Twitter->doSearchCall('search.json', Array)
+#1 /home/rpalacios/twbot/bot/follow.php(99): Twitter->search('#Iquique', NULL, NULL, 100, 1, NULL, NULL, '-33.416667,-70....', true, NULL)
+#2 {main}
+
+-------------------
+Cantidad Seguidos: 7416
+---------------------------
+Palabras
+Query: SELECT * FROM palabras WHERE bot_id = '26';
+Array
+(
+    [1] => Egipto
+    [2] => Stgo
+    [3] => #KCAMÉXICO
+    [4] => Santiago Poniente
+    [5] => #HistoriasTristesDeNuestroFútbol
+    [6] => Darío Franco
+    [7] => #YoYEsasGanasDe
+    [8] => #Iquique
+    [9] => Chile
+    [10] => #CocaColaFMTeLlevaAOneDirection
+)
+
+---------------------------\Ciudades:
+Array
+(
+    [1] => Array
+        (
+            [nombre] => Santiago
+            [longitud] => -33.416667
+            [latitud] => -70.55
+            [km] => 50
+        )
+
+    [2] => Array
+        (
+            [nombre] => vitacura
+            [longitud] => -33.3774874
+            [latitud] => -70.5623708
+            [km] => 5
+        )
+
+    [3] => Array
+        (
+            [nombre] => viña del mar
+            [longitud] => -33.024527
+            [latitud] => -71.55234000000002
+            [km] => 30
+        )
+
+    [4] => Array
+        (
+            [nombre] => LB 1
+            [longitud] => -33.35
+            [latitud] => -70.516667
+            [km] => 5
+        )
+
+    [5] => Array
+        (
+            [nombre] => LB 2
+            [longitud] => -70.516667
+            [latitud] => -33.35
+            [km] => 5
+        )
+
+    [6] => Array
+        (
+            [nombre] => vita
+            [longitud] => -33.3833
+            [latitud] => -70.575
+            [km] => 5
+        )
+
+    [7] => Array
+        (
+            [nombre] => Alonso de Cordova
+            [longitud] => -33.4044069
+            [latitud] => -70.583879
+            [km] => 2
+        )
+
+    [8] => Array
+        (
+            [nombre] => Los Dominicos
+            [longitud] => -33.4131146
+            [latitud] => -70.5478406
+            [km] => 5
+        )
+
+    [9] => Array
+        (
+            [nombre] => San Carlos de Apoquindo
+            [longitud] => -33.3948886
+            [latitud] => -70.5222636
+            [km] => 5
+        )
+
+    [10] => Array
+        (
+            [nombre] => Los Trapenses
+            [longitud] => -33.3401338
+            [latitud] => -70.5458052
+            [km] => 7
+        )
+
+    [11] => Array
+        (
+            [nombre] => Portal La Dehesa
+            [longitud] => -33.358401
+            [latitud] => -70.5171512
+            [km] => 1
+        )
+
+    [12] => Array
+        (
+            [nombre] => Parque Arauco
+            [longitud] => -33.4019825
+            [latitud] => -70.5805137
+            [km] => 3
+        )
+
+    [13] => Array
+        (
+            [nombre] => Alto Las Condes
+            [longitud] => -33.388825
+            [latitud] => -70.5452714
+            [km] => 2
+        )
+
+    [14] => Array
+        (
+            [nombre] => lo curro
+            [longitud] => -33.3780286
+            [latitud] => -70.5695189
+            [km] => 2
+        )
+
+    [15] => Array
+        (
+            [nombre] => Costanera Center
+            [longitud] => -33.4179083
+            [latitud] => -70.6084547
+            [km] => 3
+        )
+
+)
+
+--------------------
+Geo Punto: -33.4179083,-70.6084547,3km
+-----------------
+Pagina: 1
+
+ ERROR: exception 'TwitterException' with message 'The Twitter REST API v1 is no longer active. Please migrate to API v1.1. https://dev.twitter.com/docs/api/1.1/overview.' in /home/rpalacios/twbot/bot/twitter.php:673
+Stack trace:
+#0 /home/rpalacios/twbot/bot/twitter.php(2614): Twitter->doSearchCall('search.json', Array)
+#1 /home/rpalacios/twbot/bot/follow.php(99): Twitter->search('#Iquique', NULL, NULL, 100, 1, NULL, NULL, '-33.4179083,-70...', true, NULL)
+#2 {main}
+
+-------------------
+Cantidad Seguidos: 5166
+---------------------------
+Palabras
+Query: SELECT * FROM palabras WHERE bot_id = '28';
+Array
+(
+    [1] => Egipto
+    [2] => Stgo
+    [3] => #KCAMÉXICO
+    [4] => Santiago Poniente
+    [5] => #HistoriasTristesDeNuestroFútbol
+    [6] => Darío Franco
+    [7] => #YoYEsasGanasDe
+    [8] => #Iquique
+    [9] => #CocaColaFMTeLlevaAOneDirection
+    [10] => Chile
+)
+
+---------------------------\Ciudades:
+Array
+(
+    [1] => Array
+        (
+            [nombre] => Santiago
+            [longitud] => -33.416667
+            [latitud] => -70.55
+            [km] => 50
+        )
+
+    [2] => Array
+        (
+            [nombre] => Concepción
+            [longitud] => -29.906301
+            [latitud] => -71.250204
+            [km] => 100
+        )
+
+    [3] => Array
+        (
+            [nombre] => La Serena
+            [longitud] => -36.818938
+            [latitud] => -73.050319
+            [km] => 100
+        )
+
+    [4] => Array
+        (
+            [nombre] => Temuco
+            [longitud] => -18.477044
+            [latitud] => -70.314533
+            [km] => 100
+        )
+
+    [5] => Array
+        (
+            [nombre] => Temuco
+            [longitud] => -18.477044
+            [latitud] => -70.314533
+            [km] => 100
+        )
+
+    [6] => Array
+        (
+            [nombre] => Temuco
+            [longitud] => -18.477044
+            [latitud] => -70.314533
+            [km] => 100
+        )
+
+    [7] => Array
+        (
+            [nombre] => Temuco
+            [longitud] => -18.477044
+            [latitud] => -70.314533
+            [km] => 100
+        )
+
+    [8] => Array
+        (
+            [nombre] => Temuco
+            [longitud] => -18.477044
+            [latitud] => -70.314533
+            [km] => 100
+        )
+
+    [9] => Array
+        (
+            [nombre] => Temuco
+            [longitud] => -18.477044
+            [latitud] => -70.314533
+            [km] => 100
+        )
+
+    [10] => Array
+        (
+            [nombre] => Temuco
+            [longitud] => -18.477044
+            [latitud] => -70.314533
+            [km] => 100
+        )
+
+    [11] => Array
+        (
+            [nombre] => Temuco
+            [longitud] => -18.477044
+            [latitud] => -70.314533
+            [km] => 100
+        )
+
+    [12] => Array
+        (
+            [nombre] => Temuco
+            [longitud] => -18.477044
+            [latitud] => -70.314533
+            [km] => 100
+        )
+
+    [13] => Array
+        (
+            [nombre] => Temuco
+            [longitud] => -18.477044
+            [latitud] => -70.314533
+            [km] => 100
+        )
+
+    [14] => Array
+        (
+            [nombre] => Temuco
+            [longitud] => -18.477044
+            [latitud] => -70.314533
+            [km] => 100
+        )
+
+    [15] => Array
+        (
+            [nombre] => Antofagasta
+            [longitud] => -35.675147
+            [latitud] => -71.542969
+            [km] => 100
+        )
+
+    [16] => Array
+        (
+            [nombre] => Antofagasta
+            [longitud] => -35.675147
+            [latitud] => -71.542969
+            [km] => 100
+        )
+
+    [17] => Array
+        (
+            [nombre] => Iquique
+            [longitud] => -23.65
+            [latitud] => -70.4
+            [km] => 100
+        )
+
+    [18] => Array
+        (
+            [nombre] => Valdivia
+            [longitud] => -38.73383
+            [latitud] => -72.584496
+            [km] => 100
+        )
+
+    [19] => Array
+        (
+            [nombre] => Puerto Montt
+            [longitud] => -39.819586
+            [latitud] => -73.24521
+            [km] => 100
+        )
+
+    [20] => Array
+        (
+            [nombre] => Punta Arenas
+            [longitud] => -45.56974
+            [latitud] => -72.065773
+            [km] => 100
+        )
+
+    [21] => Array
+        (
+            [nombre] => Valparaiso
+            [longitud] => -71.62725
+            [latitud] => -33.03932
+            [km] => 100
+        )
+
+    [22] => Array
+        (
+            [nombre] => Buenos Aires
+            [longitud] => -34.6037232
+            [latitud] => -58.3815931
+            [km] => 100
+        )
+
+    [23] => Array
+        (
+            [nombre] => Madrid
+            [longitud] => -3.7003454
+            [latitud] => 40.4166909
+            [km] => 100
+        )
+
+    [24] => Array
+        (
+            [nombre] => Madrid
+            [longitud] => -3.7003454
+            [latitud] => 40.4166909
+            [km] => 100
+        )
+
+    [25] => Array
+        (
+            [nombre] => Madrid
+            [longitud] => -3.7003454
+            [latitud] => 40.4166909
+            [km] => 100
+        )
+
+    [26] => Array
+        (
+            [nombre] => Barcelona
+            [longitud] => 2.1699187
+            [latitud] => 41.387917
+            [km] => 100
+        )
+
+    [27] => Array
+        (
+            [nombre] => Caracas
+            [longitud] => -66.902061
+            [latitud] => 10.491016
+            [km] => 100
+        )
+
+    [28] => Array
+        (
+            [nombre] => Caracas
+            [longitud] => -66.902061
+            [latitud] => 10.491016
+            [km] => 100
+        )
+
+    [29] => Array
+        (
+            [nombre] => Guadalajara
+            [longitud] => -103.343803
+            [latitud] => 20.67359
+            [km] => 100
+        )
+
+    [30] => Array
+        (
+            [nombre] => Bogota
+            [longitud] => 4.5980556 
+            [latitud] => -74.0758333
+            [km] => 100
+        )
+
+    [31] => Array
+        (
+            [nombre] => Baires
+            [longitud] => -58.3815931
+            [latitud] => -34.6037232
+            [km] => 100
+        )
+
+    [32] => Array
+        (
+            [nombre] => Santa Cruz
+            [longitud] => -71.359212
+            [latitud] => -34.632421
+            [km] => 100
+        )
+
+    [33] => Array
+        (
+            [nombre] => Monterrey
+            [longitud] => -100.309201
+            [latitud] => 25.6732109
+            [km] => 100
+        )
+
+    [34] => Array
+        (
+            [nombre] => STGO
+            [longitud] => -70.641997
+            [latitud] => -33.4691199
+            [km] => 100
+        )
+
+    [35] => Array
+        (
+            [nombre] => Ciudad de México
+            [longitud] => 19.4326077
+            [latitud] => -99.133208
+            [km] => 100
+        )
+
+    [36] => Array
+        (
+            [nombre] => Ciudad de México
+            [longitud] => 19.4326077
+            [latitud] => -99.133208
+            [km] => 100
+        )
+
+    [37] => Array
+        (
+            [nombre] => buenos aires, argentina
+            [longitud] => -34.6037232
+            [latitud] => -58.3815931
+            [km] => 100
+        )
+
+    [38] => Array
+        (
+            [nombre] => vitacura
+            [longitud] => -33.3774874
+            [latitud] => -70.5623708
+            [km] => 5
+        )
+
+    [39] => Array
+        (
+            [nombre] => providencia
+            [longitud] => -33.4346439
+            [latitud] => -70.61580350000003
+            [km] => 3
+        )
+
+    [40] => Array
+        (
+            [nombre] => viña del mar
+            [longitud] => -33.024527
+            [latitud] => -71.55234000000002
+            [km] => 30
+        )
+
+    [41] => Array
+        (
+            [nombre] => la recoleta
+            [longitud] => -34.5905438
+            [latitud] => -58.39057230000003
+            [km] => 20
+        )
+
+    [42] => Array
+        (
+            [nombre] => palermo chico
+            [longitud] => -34.5851635
+            [latitud] => -58.42671259999997
+            [km] => 10
+        )
+
+    [43] => Array
+        (
+            [nombre] => concepcion
+            [longitud] => -36.8188831
+            [latitud] => -73.05035550000002
+            [km] => 100
+        )
+
+    [44] => Array
+        (
+            [nombre] => rancagua
+            [longitud] => -34.1681015
+            [latitud] => -70.73897490000002
+            [km] => 30
+        )
+
+)
+
+--------------------
+Geo Punto: -45.56974,-72.065773,100km
+-----------------
+Pagina: 1
+
+ ERROR: exception 'TwitterException' with message 'The Twitter REST API v1 is no longer active. Please migrate to API v1.1. https://dev.twitter.com/docs/api/1.1/overview.' in /home/rpalacios/twbot/bot/twitter.php:673
+Stack trace:
+#0 /home/rpalacios/twbot/bot/twitter.php(2614): Twitter->doSearchCall('search.json', Array)
+#1 /home/rpalacios/twbot/bot/follow.php(99): Twitter->search('#HistoriasTrist...', NULL, NULL, 100, 1, NULL, NULL, '-45.56974,-72.0...', true, NULL)
+#2 {main}
+
+-------------------
+Cantidad Seguidos: 4939
+---------------------------
+Palabras
+Query: SELECT * FROM palabras WHERE bot_id = '30';
+Array
+(
+    [1] => #SoyDeLosQue
+    [2] => #FollowBackDeChilenosCagaosDeFrío
+    [3] => #21días
+    [4] => #PartyHardEnLaCasaDeMagnus
+    [5] => #ConLosAñosAprendí
+)
+
+---------------------------\Ciudades:
+Array
+(
+    [1] => Array
+        (
+            [nombre] => Santiago
+            [longitud] => -33.416667
+            [latitud] => -70.55
+            [km] => 50
+        )
+
+    [2] => Array
+        (
+            [nombre] => Concepción
+            [longitud] => -29.906301
+            [latitud] => -71.250204
+            [km] => 100
+        )
+
+    [3] => Array
+        (
+            [nombre] => La Serena
+            [longitud] => -36.818938
+            [latitud] => -73.050319
+            [km] => 100
+        )
+
+    [4] => Array
+        (
+            [nombre] => Temuco
+            [longitud] => -18.477044
+            [latitud] => -70.314533
+            [km] => 100
+        )
+
+    [5] => Array
+        (
+            [nombre] => Antofagasta
+            [longitud] => -35.675147
+            [latitud] => -71.542969
+            [km] => 100
+        )
+
+    [6] => Array
+        (
+            [nombre] => Iquique
+            [longitud] => -23.65
+            [latitud] => -70.4
+            [km] => 100
+        )
+
+    [7] => Array
+        (
+            [nombre] => Valdivia
+            [longitud] => -38.73383
+            [latitud] => -72.584496
+            [km] => 100
+        )
+
+    [8] => Array
+        (
+            [nombre] => Puerto Montt
+            [longitud] => -39.819586
+            [latitud] => -73.24521
+            [km] => 100
+        )
+
+    [9] => Array
+        (
+            [nombre] => Punta Arenas
+            [longitud] => -45.56974
+            [latitud] => -72.065773
+            [km] => 100
+        )
+
+    [10] => Array
+        (
+            [nombre] => Valparaiso
+            [longitud] => -71.62725
+            [latitud] => -33.03932
+            [km] => 100
+        )
+
+    [11] => Array
+        (
+            [nombre] => Buenos Aires
+            [longitud] => -34.6037232
+            [latitud] => -58.3815931
+            [km] => 100
+        )
+
+    [12] => Array
+        (
+            [nombre] => Madrid
+            [longitud] => -3.7003454
+            [latitud] => 40.4166909
+            [km] => 100
+        )
+
+    [13] => Array
+        (
+            [nombre] => Barcelona
+            [longitud] => 2.1699187
+            [latitud] => 41.387917
+            [km] => 100
+        )
+
+    [14] => Array
+        (
+            [nombre] => Caracas
+            [longitud] => -66.902061
+            [latitud] => 10.491016
+            [km] => 100
+        )
+
+    [15] => Array
+        (
+            [nombre] => Guadalajara
+            [longitud] => -103.343803
+            [latitud] => 20.67359
+            [km] => 100
+        )
+
+    [16] => Array
+        (
+            [nombre] => Bogota
+            [longitud] => 4.5980556 
+            [latitud] => -74.0758333
+            [km] => 100
+        )
+
+    [17] => Array
+        (
+            [nombre] => Baires
+            [longitud] => -58.3815931
+            [latitud] => -34.6037232
+            [km] => 100
+        )
+
+    [18] => Array
+        (
+            [nombre] => Santa Cruz
+            [longitud] => -71.359212
+            [latitud] => -34.632421
+            [km] => 100
+        )
+
+    [19] => Array
+        (
+            [nombre] => Monterrey
+            [longitud] => -100.309201
+            [latitud] => 25.6732109
+            [km] => 100
+        )
+
+    [20] => Array
+        (
+            [nombre] => STGO
+            [longitud] => -70.641997
+            [latitud] => -33.4691199
+            [km] => 100
+        )
+
+    [21] => Array
+        (
+            [nombre] => Ciudad de México
+            [longitud] => 19.4326077
+            [latitud] => -99.133208
+            [km] => 100
+        )
+
+    [22] => Array
+        (
+            [nombre] => Ciudad de México
+            [longitud] => 19.4326077
+            [latitud] => -99.133208
+            [km] => 100
+        )
+
+    [23] => Array
+        (
+            [nombre] => buenos aires, argentina
+            [longitud] => -34.6037232
+            [latitud] => -58.3815931
+            [km] => 100
+        )
+
+    [24] => Array
+        (
+            [nombre] => vitacura
+            [longitud] => -33.3774874
+            [latitud] => -70.5623708
+            [km] => 5
+        )
+
+    [25] => Array
+        (
+            [nombre] => providencia
+            [longitud] => -33.4346439
+            [latitud] => -70.61580350000003
+            [km] => 3
+        )
+
+    [26] => Array
+        (
+            [nombre] => viña del mar
+            [longitud] => -33.024527
+            [latitud] => -71.55234000000002
+            [km] => 30
+        )
+
+    [27] => Array
+        (
+            [nombre] => rancagua
+            [longitud] => -34.1681015
+            [latitud] => -70.73897490000002
+            [km] => 30
+        )
+
+    [28] => Array
+        (
+            [nombre] => concepcion
+            [longitud] => -36.8188831
+            [latitud] => -73.05035550000002
+            [km] => 100
+        )
+
+)
+
+--------------------
+Geo Punto: -103.343803,20.67359,100km
+-----------------
+Pagina: 1
+
+ ERROR: exception 'TwitterException' with message 'The Twitter REST API v1 is no longer active. Please migrate to API v1.1. https://dev.twitter.com/docs/api/1.1/overview.' in /home/rpalacios/twbot/bot/twitter.php:673
+Stack trace:
+#0 /home/rpalacios/twbot/bot/twitter.php(2614): Twitter->doSearchCall('search.json', Array)
+#1 /home/rpalacios/twbot/bot/follow.php(99): Twitter->search('#PartyHardEnLaC...', NULL, NULL, 100, 1, NULL, NULL, '-103.343803,20....', true, NULL)
+#2 {main}
+
+-------------------
+Cantidad Seguidos: 12478
+---------------------------
+Palabras
+Query: SELECT * FROM palabras WHERE bot_id = '31';
+Array
+(
+    [1] => #SoyDeLosQue
+    [2] => #FollowBackDeChilenosCagaosDeFrío
+    [3] => #21días
+    [4] => #PartyHardEnLaCasaDeMagnus
+    [5] => #ConLosAñosAprendí
+    [6] => Axel Kaiser
+)
+
+---------------------------\Ciudades:
+Array
+(
+    [1] => Array
+        (
+            [nombre] => Santiago
+            [longitud] => -33.416667
+            [latitud] => -70.55
+            [km] => 50
+        )
+
+    [2] => Array
+        (
+            [nombre] => Concepción
+            [longitud] => -29.906301
+            [latitud] => -71.250204
+            [km] => 100
+        )
+
+    [3] => Array
+        (
+            [nombre] => La Serena
+            [longitud] => -36.818938
+            [latitud] => -73.050319
+            [km] => 100
+        )
+
+    [4] => Array
+        (
+            [nombre] => Temuco
+            [longitud] => -18.477044
+            [latitud] => -70.314533
+            [km] => 100
+        )
+
+    [5] => Array
+        (
+            [nombre] => Antofagasta
+            [longitud] => -35.675147
+            [latitud] => -71.542969
+            [km] => 100
+        )
+
+    [6] => Array
+        (
+            [nombre] => Iquique
+            [longitud] => -23.65
+            [latitud] => -70.4
+            [km] => 100
+        )
+
+    [7] => Array
+        (
+            [nombre] => Valdivia
+            [longitud] => -38.73383
+            [latitud] => -72.584496
+            [km] => 100
+        )
+
+    [8] => Array
+        (
+            [nombre] => Puerto Montt
+            [longitud] => -39.819586
+            [latitud] => -73.24521
+            [km] => 100
+        )
+
+    [9] => Array
+        (
+            [nombre] => Punta Arenas
+            [longitud] => -45.56974
+            [latitud] => -72.065773
+            [km] => 100
+        )
+
+    [10] => Array
+        (
+            [nombre] => Valparaiso
+            [longitud] => -71.62725
+            [latitud] => -33.03932
+            [km] => 100
+        )
+
+    [11] => Array
+        (
+            [nombre] => Buenos Aires
+            [longitud] => -34.6037232
+            [latitud] => -58.3815931
+            [km] => 100
+        )
+
+    [12] => Array
+        (
+            [nombre] => Madrid
+            [longitud] => -3.7003454
+            [latitud] => 40.4166909
+            [km] => 100
+        )
+
+    [13] => Array
+        (
+            [nombre] => Barcelona
+            [longitud] => 2.1699187
+            [latitud] => 41.387917
+            [km] => 100
+        )
+
+    [14] => Array
+        (
+            [nombre] => Caracas
+            [longitud] => -66.902061
+            [latitud] => 10.491016
+            [km] => 100
+        )
+
+    [15] => Array
+        (
+            [nombre] => Guadalajara
+            [longitud] => -103.343803
+            [latitud] => 20.67359
+            [km] => 100
+        )
+
+    [16] => Array
+        (
+            [nombre] => Bogota
+            [longitud] => 4.5980556 
+            [latitud] => -74.0758333
+            [km] => 100
+        )
+
+    [17] => Array
+        (
+            [nombre] => Baires
+            [longitud] => -58.3815931
+            [latitud] => -34.6037232
+            [km] => 100
+        )
+
+    [18] => Array
+        (
+            [nombre] => Santa Cruz
+            [longitud] => -71.359212
+            [latitud] => -34.632421
+            [km] => 100
+        )
+
+    [19] => Array
+        (
+            [nombre] => Monterrey
+            [longitud] => -100.309201
+            [latitud] => 25.6732109
+            [km] => 100
+        )
+
+    [20] => Array
+        (
+            [nombre] => STGO
+            [longitud] => -70.641997
+            [latitud] => -33.4691199
+            [km] => 100
+        )
+
+    [21] => Array
+        (
+            [nombre] => Ciudad de México
+            [longitud] => 19.4326077
+            [latitud] => -99.133208
+            [km] => 100
+        )
+
+    [22] => Array
+        (
+            [nombre] => Ciudad de México
+            [longitud] => 19.4326077
+            [latitud] => -99.133208
+            [km] => 100
+        )
+
+)
+
+--------------------
+Geo Punto: -38.73383,-72.584496,100km
+-----------------
+Pagina: 1
+
+ ERROR: exception 'TwitterException' with message 'The Twitter REST API v1 is no longer active. Please migrate to API v1.1. https://dev.twitter.com/docs/api/1.1/overview.' in /home/rpalacios/twbot/bot/twitter.php:673
+Stack trace:
+#0 /home/rpalacios/twbot/bot/twitter.php(2614): Twitter->doSearchCall('search.json', Array)
+#1 /home/rpalacios/twbot/bot/follow.php(99): Twitter->search('#PartyHardEnLaC...', NULL, NULL, 100, 1, NULL, NULL, '-38.73383,-72.5...', true, NULL)
+#2 {main}
+
+-------------------
+Cantidad Seguidos: 8133
+---------------------------
+Palabras
+Query: SELECT * FROM palabras WHERE bot_id = '32';
+Array
+(
+    [1] => #SoyDeLosQue
+    [2] => #FollowBackDeChilenosCagaosDeFrío
+    [3] => #21días
+    [4] => #PartyHardEnLaCasaDeMagnus
+    [5] => #ConLosAñosAprendí
+)
+
+---------------------------\Ciudades:
+Array
+(
+    [1] => Array
+        (
+            [nombre] => Santiago
+            [longitud] => -33.416667
+            [latitud] => -70.55
+            [km] => 50
+        )
+
+    [2] => Array
+        (
+            [nombre] => Concepción
+            [longitud] => -29.906301
+            [latitud] => -71.250204
+            [km] => 100
+        )
+
+    [3] => Array
+        (
+            [nombre] => La Serena
+            [longitud] => -36.818938
+            [latitud] => -73.050319
+            [km] => 100
+        )
+
+    [4] => Array
+        (
+            [nombre] => Temuco
+            [longitud] => -18.477044
+            [latitud] => -70.314533
+            [km] => 100
+        )
+
+    [5] => Array
+        (
+            [nombre] => Antofagasta
+            [longitud] => -35.675147
+            [latitud] => -71.542969
+            [km] => 100
+        )
+
+    [6] => Array
+        (
+            [nombre] => Iquique
+            [longitud] => -23.65
+            [latitud] => -70.4
+            [km] => 100
+        )
+
+    [7] => Array
+        (
+            [nombre] => Valdivia
+            [longitud] => -38.73383
+            [latitud] => -72.584496
+            [km] => 100
+        )
+
+    [8] => Array
+        (
+            [nombre] => Puerto Montt
+            [longitud] => -39.819586
+            [latitud] => -73.24521
+            [km] => 100
+        )
+
+    [9] => Array
+        (
+            [nombre] => Punta Arenas
+            [longitud] => -45.56974
+            [latitud] => -72.065773
+            [km] => 100
+        )
+
+    [10] => Array
+        (
+            [nombre] => Valparaiso
+            [longitud] => -71.62725
+            [latitud] => -33.03932
+            [km] => 100
+        )
+
+    [11] => Array
+        (
+            [nombre] => Buenos Aires
+            [longitud] => -34.6037232
+            [latitud] => -58.3815931
+            [km] => 100
+        )
+
+    [12] => Array
+        (
+            [nombre] => Madrid
+            [longitud] => -3.7003454
+            [latitud] => 40.4166909
+            [km] => 100
+        )
+
+    [13] => Array
+        (
+            [nombre] => Barcelona
+            [longitud] => 2.1699187
+            [latitud] => 41.387917
+            [km] => 100
+        )
+
+    [14] => Array
+        (
+            [nombre] => Caracas
+            [longitud] => -66.902061
+            [latitud] => 10.491016
+            [km] => 100
+        )
+
+    [15] => Array
+        (
+            [nombre] => Guadalajara
+            [longitud] => -103.343803
+            [latitud] => 20.67359
+            [km] => 100
+        )
+
+    [16] => Array
+        (
+            [nombre] => Bogota
+            [longitud] => 4.5980556 
+            [latitud] => -74.0758333
+            [km] => 100
+        )
+
+    [17] => Array
+        (
+            [nombre] => Baires
+            [longitud] => -58.3815931
+            [latitud] => -34.6037232
+            [km] => 100
+        )
+
+    [18] => Array
+        (
+            [nombre] => Santa Cruz
+            [longitud] => -71.359212
+            [latitud] => -34.632421
+            [km] => 100
+        )
+
+    [19] => Array
+        (
+            [nombre] => Monterrey
+            [longitud] => -100.309201
+            [latitud] => 25.6732109
+            [km] => 100
+        )
+
+    [20] => Array
+        (
+            [nombre] => STGO
+            [longitud] => -70.641997
+            [latitud] => -33.4691199
+            [km] => 100
+        )
+
+    [21] => Array
+        (
+            [nombre] => Ciudad de México
+            [longitud] => 19.4326077
+            [latitud] => -99.133208
+            [km] => 100
+        )
+
+    [22] => Array
+        (
+            [nombre] => Ciudad de México
+            [longitud] => 19.4326077
+            [latitud] => -99.133208
+            [km] => 100
+        )
+
+    [23] => Array
+        (
+            [nombre] => buenos aires, argentina
+            [longitud] => -34.6037232
+            [latitud] => -58.3815931
+            [km] => 100
+        )
+
+    [24] => Array
+        (
+            [nombre] => vitacura
+            [longitud] => -33.3774874
+            [latitud] => -70.5623708
+            [km] => 5
+        )
+
+    [25] => Array
+        (
+            [nombre] => providencia
+            [longitud] => -33.4346439
+            [latitud] => -70.61580350000003
+            [km] => 3
+        )
+
+    [26] => Array
+        (
+            [nombre] => viña del mar
+            [longitud] => -33.024527
+            [latitud] => -71.55234000000002
+            [km] => 30
+        )
+
+    [27] => Array
+        (
+            [nombre] => la recoleta
+            [longitud] => -34.5905438
+            [latitud] => -58.39057230000003
+            [km] => 20
+        )
+
+    [28] => Array
+        (
+            [nombre] => palermo chico
+            [longitud] => -34.5851635
+            [latitud] => -58.42671259999997
+            [km] => 10
+        )
+
+    [29] => Array
+        (
+            [nombre] => concepcion
+            [longitud] => -36.8188831
+            [latitud] => -73.05035550000002
+            [km] => 100
+        )
+
+    [30] => Array
+        (
+            [nombre] => rancagua
+            [longitud] => -34.1681015
+            [latitud] => -70.73897490000002
+            [km] => 30
+        )
+
+)
+
+--------------------
+Geo Punto: -23.65,-70.4,100km
+-----------------
+Pagina: 1
+
+ ERROR: exception 'TwitterException' with message 'The Twitter REST API v1 is no longer active. Please migrate to API v1.1. https://dev.twitter.com/docs/api/1.1/overview.' in /home/rpalacios/twbot/bot/twitter.php:673
+Stack trace:
+#0 /home/rpalacios/twbot/bot/twitter.php(2614): Twitter->doSearchCall('search.json', Array)
+#1 /home/rpalacios/twbot/bot/follow.php(99): Twitter->search('#ConLosA??osApr...', NULL, NULL, 100, 1, NULL, NULL, '-23.65,-70.4,10...', true, NULL)
+#2 {main}
+
+-------------------
+Cantidad Seguidos: 21895
+-----------------------------------------------
+
+
+Encontrados:
+Array
+(
+)
+
+
+Fin del proceso: Tue, 09/07/2013, 23:08:15
+
+Guardando log...
+
+
+------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------
+
+

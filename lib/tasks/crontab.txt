@@ -1,0 +1,2 @@
+0 23 * * * PATH=/home/ubuntu/.rbenv/shims/:/home/ubuntu/.rbenv/bin/:/usr/bin/:$PATH; eval "$(rbenv init -)"; cd ~/nace/ && bundle exec rake mail_pro RAILS_ENV=production
+45 23 * * 0 PATH=/home/ubuntu/.rbenv/shims/:/home/ubuntu/.rbenv/bin/:/usr/bin/:$PATH; eval "$(rbenv init -)"; cd ~/nace/ && bundle exec rake mail_base RAILS_ENV=production

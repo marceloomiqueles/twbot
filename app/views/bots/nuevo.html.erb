@@ -4,6 +4,8 @@
 
 	<% if flash[:error] %>
       	<div class="mensajes_error">
+
+  				<%= @auth %>
       		<p><%= flash[:error] %><p>
       	</div>
     <% end %>

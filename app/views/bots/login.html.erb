@@ -1,28 +1,43 @@
-<% provide(:title, 'Login') %>
-<div class="center hero-unit">
-  	<h1>Login</h1>
-
-	<% if flash[:error] %>
-      	<div class="mensajes_error">
-      		<p><%= flash[:error] %><p>
-      	</div>
-    <% end %>
-  	<p>Bienvenido al sistema</p>
-
-  	<%= form_for(:session, url: bot_login_path) do |f| %>
-		<fieldset class="fields">
-			<div class="field">
-  				<%= f.label :email %>
-  				<%= f.text_field :email %>
-  			</div>
-  			<div class="field">
-  				<%= f.label :password %>
-  				<%= f.password_field :password %>
-  			</div>
-  		</fieldset>
-
-  		<fieldset class="actions-login">
-  			<%= f.submit "Ingresar", class: "btn btn-large btn-primary" %>
-  		</fieldset>
-	<% end %>
-</div>
+<!DOCTYPE html>
+<html lang='es'>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>Login</title>
+    <%= stylesheet_link_tag    "application", media: "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+    <%= render 'layouts/shim' %>
+    <style type="text/css">
+      body {
+        padding-top: 40px;
+        padding-bottom: 40px;
+        background-color: #eee;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <% if flash[:error] %>
+        <div class="mensajes_error">
+          <p><%= flash[:error] %><p>
+        </div>
+      <% end %>
+      <%= form_for(:session, url: bot_login_path, :html => {:class => "form-signin"}) do |f| %>
+        <h2 class="form-signin-heading">Login</h2>
+        <%= f.label :email, :class => "sr-only" %>
+        <%= f.text_field :email, placeholder: "Email", :class => "form-control" %>
+        <%= f.label :password, :class => "sr-only" %>
+        <%= f.password_field :password, placeholder: "Password", :class => "form-control" %>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" value="remember-me"> Remember me
+          </label>
+        </div>
+        <%= f.submit "Ingresar", class: "btn btn-lg btn-primary btn-block" %>
+      <% end %>
+    </div>
+    <%= render 'layouts/footer' %>
+  </body>
+</html>

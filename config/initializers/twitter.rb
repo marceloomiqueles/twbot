@@ -1,4 +1,4 @@
-Twitter.configure do |config|
-  config.consumer_key = 'LHfqxDyR3X095UCMW3gJjA'
-  config.consumer_secret = 'bd8IPh4TLN8DXE7ic0p1IpeTjvPeO6OxCDNu7MnKFg'
+client = Twitter::REST::Client.new do |config|
+  config.consumer_key = ENV['TW_CONSUMER_KEY']
+  config.consumer_secret = ENV['TW_CONSUMER_SECRET']
 end

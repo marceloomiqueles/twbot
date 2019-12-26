@@ -1,93 +1,39 @@
-  Twbot::Application.routes.draw do
-  root to: 'bots#index'
+Twbot::Application.routes.draw do
+  root    'bots#index'
 
-  match '/bot/nuevo' => 'bots#nuevo', :as => '/bot/nuevo', :via => :get
-  match '/bot/nuevo' => 'bots#guardar', :as => '/bot/nuevo', :via => :post
-  match '/bot/:id/editar' => 'bots#editar', :as => '/bot/editar', :via => :get
-  match '/bot/:id/editar' => 'bots#actualizar', :as => '/bot/editar', :via => :put
-  match '/bot/eliminar/:id' => 'bots#eliminar', :as => '/bot/eliminar'
-  match '/bot/on/:id' => 'bots#bot_on', :as => '/bot/on'
-  match '/bot/off/:id' => 'bots#bot_off', :as => '/bot/off'
-  match '/bot/login' => 'bots#login', :as => '/bot/login', :via => :post
+  get     '/bot/nuevo'                              => 'bots#nuevo'           , as: '/bot/nuevo'
+  post    '/bot/guardar'                            => 'bots#guardar'         , as: '/bot/guardar'
+  get     '/bot/:id/editar'                         => 'bots#editar'          , as: '/bot/editar'
+  patch   '/bot/:id/editar'                         => 'bots#actualizar'      , as: '/bot/actualizar'
+  get     '/bot/eliminar/:id'                       => 'bots#eliminar'        , as: '/bot/eliminar'
+  get     '/bot/on/:id'                             => 'bots#bot_on'          , as: '/bot/on'
+  get     '/bot/off/:id'                            => 'bots#bot_off'         , as: '/bot/off'
+  post    '/bot/login'                              => 'bots#login'           , as: '/bot/login'
 
-  match '/bot/:id/palabras' => 'bots#palabras', :as => '/bot/palabras'
-  match '/bot/:id/palabras/agregar' => 'bots#agregar_palabra', :as => '/bot/agregar/palabra', :via => :get
-  match '/bot/:id/palabras/agregar' => 'bots#guardar_palabra', :as => '/bot/agregar/palabra', :via => :post
-  match '/bot/:id/palabras/eliminar/:palabra_id' => 'bots#eliminar_palabra', :as => '/bot/eliminar/palabra'
+  get     '/bot/:id/palabras'                       => 'bots#palabras'        , as: '/bot/palabras'
+  get     '/bot/:id/palabras/agregar'               => 'bots#agregar_palabra' , as: '/bot/agregar/palabra'
+  post    '/bot/:id/palabras/agregar'               => 'bots#guardar_palabra' , as: '/bot/agregar/palabra-guardar'
+  delete  '/bot/:id/palabras/eliminar/:palabra_id'  => 'bots#eliminar_palabra', as: '/bot/eliminar/palabra'
 
-  match '/bot/:id/ciudades' => 'bots#ciudades', :as => '/bot/ciudades'
-  match '/bot/:id/ciudades/add/:id_ciudad' => 'bots#agregar_ciudad', :as => '/bot/ciudades/add'
-  match '/bot/:id/ciudades/del/:id_botciudad' => 'bots#eliminar_ciudad', :as => '/bot/ciudades/del'
+  get     '/bot/:id/ciudades'                       => 'bots#ciudades'        , as: '/bot/ciudades'
+  get     '/bot/:id/ciudades/add/:id_ciudad'        => 'bots#agregar_ciudad'  , as: '/bot/ciudades/add'
+  delete  '/bot/:id/ciudades/del/:id_botciudad'     => 'bots#eliminar_ciudad' , as: '/bot/ciudades/del'
 
-  match '/bot/:id/tweets' => 'bots#tweets', :as => '/bot/tweets'
-  match '/bot/:id/tweets/detalle/:tweet_id' => 'bots#tweet_detalle', :as => '/bot/tweet/detalle'
-  match '/bot/:id/tweets/unfollow/:tweet' => 'bots#unfollow', :as => '/bot/tweets/unfollow'
-  match '/bot/:id/tweets/follow/:tweet' => 'bots#follow', :as => '/bot/tweets/follow'
+  get     '/bot/:id/tweets'                         => 'bots#tweets'          , as: '/bot/tweets'
+  get     '/bot/:id/tweets/detalle/:tweet_id'       => 'bots#tweet_detalle'   , as: '/bot/tweet/detalle'
+  get     '/bot/:id/tweets/unfollow/:tweet'         => 'bots#unfollow'        , as: '/bot/tweets/unfollow'
+  get     '/bot/:id/tweets/follow/:tweet'           => 'bots#follow'          , as: '/bot/tweets/follow'
 
-  match "/auth/:provider/callback" => "bots#auth"
-  match "/auth/failure" => "bots#fail_auth"
+  post    '/password/forgot'                         => 'passwords#forgot'      , as: 'password/forgot'
+  post    '/password/reset'                          => 'passwords#reset'       , as: 'password/reset'
 
-  match "/ciudades" => "ciudades#index"
-  match "/ciudades/nueva" => "ciudades#nueva", :as => '/ciudades/nueva', :via => :get
-  match "/ciudades/nueva" => "ciudades#guardar", :as => '/ciudades/nueva', :via => :post
-  match "/ciudades/editar/:id" => "ciudades#editar", :as => '/ciudades/editar', :via => :get
-  match "/ciudades/editar/:id" => "ciudades#actualizar", :as => '/ciudades/editar', :via => :put
-  match "/ciudades/eliminar/:id" => "ciudades#eliminar", :as => '/ciudades/eliminar'
+  get     '/auth/:provider/callback'                => 'bots#auth'
+  get     '/auth/failure'                           => 'bots#fail_auth'
 
-  # The priority is based upon order of creation:
-  # first created -> highest priority.
-
-  # Sample of regular route:
-  #   match 'products/:id' => 'catalog#view'
-  # Keep in mind you can assign values other than :controller and :action
-
-  # Sample of named route:
-  #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
-  # This route can be invoked with purchase_url(:id => product.id)
-
-  # Sample resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
-
-  # Sample resource route with options:
-  #   resources :products do
-  #     member do
-  #       get 'short'
-  #       post 'toggle'
-  #     end
-  #
-  #     collection do
-  #       get 'sold'
-  #     end
-  #   end
-
-  # Sample resource route with sub-resources:
-  #   resources :products do
-  #     resources :comments, :sales
-  #     resource :seller
-  #   end
-
-  # Sample resource route with more complex sub-resources
-  #   resources :products do
-  #     resources :comments
-  #     resources :sales do
-  #       get 'recent', :on => :collection
-  #     end
-  #   end
-
-  # Sample resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
-
-  # You can have the root of your site routed with "root"
-  # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
-
-  # See how all your routes lay out with "rake routes"
-
-  # This is a legacy wild controller route that's not recommended for RESTful applications.
-  # Note: This route will make all actions in every controller accessible via GET requests.
-  # match ':controller(/:action(/:id))(.:format)'
+  get     '/ciudades'                               => 'ciudades#index'
+  get     '/ciudades/nueva'                         => 'ciudades#nueva'       , as: '/ciudades/nueva'
+  post    '/ciudades/nueva'                         => 'ciudades#guardar'     , as: '/ciudades/guardar'
+  get     '/ciudades/editar/:id'                    => 'ciudades#editar'      , as: '/ciudades/editar'
+  patch   '/ciudades/editar/:id'                    => 'ciudades#actualizar'  , as: '/ciudades/actualizar'
+  delete  '/ciudades/eliminar/:id'                  => 'ciudades#eliminar'    , as: '/ciudades/eliminar'
 end

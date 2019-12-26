@@ -1,33 +1,25 @@
 <% provide(:title, 'Editar') %>
-<div class="center hero-unit">
-  	<h1>Editar Bot</h1>
-  	<h2>Cuenta vinculada: <%= link_to "@"+@bot.tw_cuenta, "http://twitter.com/"+@bot.tw_cuenta %></h2>
-  	<div class="form_puntos origen">
-		<%= form_for @bot, :url => bot_editar_path(@bot) do |form| %>
-			<fieldset class="fields">
-				<div class="field control-group">
-					<%= form.label :nombre %>
-					<%= form.text_field :nombre %>
-				</div>
+<h1>Editar Bot</h1>
+<h3>Cuenta vinculada: <%= link_to "@#{@bot.screen_name}", "http://twitter.com/#{@bot.screen_name}" %></h3>
 
-				<div class="field control-group">
-					<%= form.label :cantidad_seguir, "Máximo a seguir por hora" %>
-					<div class="input-prepend">
-						<%= form.text_field :cantidad_seguir %>
-					</div>
-				</div>
-
-				<div class="field control-group">
-					<%= form.label :verificar_seguido, "Verificar seguidos despues de" %>
-					<div class="input-prepend">
-						<%= form.text_field :verificar_seguido, {class: "span1"} %><span class="add-on">Dias</span>
-					</div>
-				</div>
-			</fieldset>
-
-			<fieldset class="actions">
-				<%= form.submit "Guardar", class: "btn btn-large btn-primary" %>
-			</fieldset>
-		<% end %>
+<%= form_for @bot, :url => bot_editar_path(@bot) do |form| %>
+	<div class="form-group">
+		<%= form.label :name %>
+		<%= form.text_field :name, :class => "form-control" %>
 	</div>
-</div>
+
+	<div class="form-group">
+		<%= form.label :cantidad_seguir, "Máximo a seguir por hora" %>
+		<%= form.text_field :cantidad_seguir, :class => "form-control" %>
+	</div>
+
+	<div class="form-group">
+		<%= form.label :verificar_seguido, "Verificar seguidos despues de" %>
+		<div class="input-group">
+			<%= form.text_field :verificar_seguido, :class => "form-control" %>
+			<div class="input-group-addon">Días</div>
+		</div>
+	</div>
+
+	<%= form.submit "Guardar", class: "btn btn-default" %>
+<% end %>

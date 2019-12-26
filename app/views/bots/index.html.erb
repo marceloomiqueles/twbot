@@ -1,59 +1,49 @@
-<div class="center hero-unit">
-  	<h1>Bots en el Sistema</h1>
-	<% if flash[:notice] %>
-      	<p class="notice"><%= flash[:notice] %></p>
-    <% end %>
-    <table>
-    	<tr>
-            <th>Nombre</th>
-    		<th>Cuenta Twitter</th>
-    		<th>Asociados</th>
-            <th>Configuración</th>
-            <th>Estadísticas</th>
-    		<th>Acciones</th>
-    	</tr>
-    	<% @bots.each do |bot| %>
-	    	<tr>
-                <td><%= bot.nombre %></td>
-	    		<td><%= link_to "@"+bot.tw_cuenta, "http://twitter.com/"+bot.tw_cuenta, target: "_blank" %></td>
-	    		<td>
-                    <div><%= bot.palabras.length %> Palabras</div>
-                    <div><%= bot.botCiudads.length %> Ciudades</div>
-                </td>
-                <td>
-                    <div>Seguir por Hora: <%= bot.cantidad_seguir %></div>
-                    <div>Verificar Cada: <%= bot.verificar_seguido %> dias</div>
-                </td>
-                <td>
-                    <div>Inicial: <%= bot.followers_count %></div>
-                    <div>Seguidos x Bot: <%= bot.siguiendo %></div>
-                    <div>Han Seguido: <%= bot.seguidores %></div>
-                </td>
-	    		<td>
-                    <div class="btn-toolbar">
-                        <div class="btn-group">
-                            <% if bot.estado == 0 %>
-                                <% if bot.palabras.length > 0 && bot.botCiudads.length > 0 %>
-                                    <%= link_to "<i class='icon-play icon-white'></i>".html_safe, bot_on_path(bot), class: "btn btn-mini btn-success", title: "Encender Bot", :confirm => "Seguro que quieres encender este bot?" %>
-                                <% else %>
-                                    <span class="btn btn-mini btn-success disabled" title="Agrega al menos una palabra y una ciudad al Bot"><i class='icon-play icon-white'></i></span>
-                                <% end %>
-                            <% else %>
-                                <%= link_to "<i class='icon-stop icon-white'></i>".html_safe, bot_off_path(bot), class: "btn btn-mini btn-danger", title: "Apagar Bot", :confirm => "Seguro que quieres apagar este bot?" %>
-                            <% end %>
-                            <%= link_to "<i class='icon-edit icon-white'></i>".html_safe, bot_editar_path(bot), class: "btn btn-mini btn-info", title: "Editar Bot" %>
-                            <%= link_to "<i class='icon-trash icon-white'></i>".html_safe, bot_eliminar_path(bot), class: "btn btn-mini btn-danger", title: "Eliminar Bot", :confirm => "Seguro que quieres eliminar este bot?" %>
-                        </div>
-                    </div>
-                    <div class="btn-toolbar">
-                        <div class="btn-group">
-                            <%= link_to "Palabras", bot_palabras_path(bot), class: "btn btn-mini", title: "Palabras asociadas al Bot" %>
-                            <%= link_to "Ciudades", bot_ciudades_path(bot), class: "btn btn-mini", title: "Ciudades asociadas al Bot" %>
-                            <%= link_to "Tweets", bot_tweets_path(bot), class: "btn btn-mini", title: "Tweets que se han seguido con el Bot" %>
-                        </div>
-                    </div>
-                </td>
-	    	</tr>
-	    <% end %>
-    </table>
+<% provide(:title, 'Home') %>
+<h1>Bots en el Sistema</h1>
+<% if flash[:notice] %>
+	<p class="notice"><%= flash[:notice] %></p>
+<% end %>
+<div class="table-responsive">
+	<table class='table table-striped'>
+		<tr>
+			<th>Nombre</th>
+			<th>Cuenta Twitter</th>
+			<th>Asociados</th>
+			<th>Configuración</th>
+			<th>Estadísticas</th>
+			<th class='text-center'>Acciones</th>
+		</tr>
+		<% @bots.each do |bot| %>
+			<tr>
+				<td><%= bot.name %></td>
+				<td><%= link_to "@#{bot.screen_name}", "https://twitter.com/#{bot.screen_name}", target: "_blank" %></td>
+				<td>
+					<div><%= bot.palabras.length %> Palabras</div>
+					<div><%= bot.botCiudads.length %> Ciudades</div>
+				</td>
+				<td>
+					<div>Seguir por Hora: <%= bot.cantidad_seguir %></div>
+					<div>Verificar Cada: <%= bot.verificar_seguido %> dias</div>
+				</td>
+				<td>
+					<div>Inicial: <%= bot.followers_count %></div>
+					<div>Seguidos x Bot: <%= bot.siguiendo %></div>
+					<div>Han Seguido: <%= bot.seguidores %></div>
+				</td>
+				<td>
+					<div class="btn-toolbar text-center" role="toolbar" aria-label="...">
+						<div class="btn-group btn-group-sm" role="group" aria-label="...">
+							<% if bot.estado == 0 %>
+								<%= link_to "<span class='glyphicon glyphicon-play' aria-hidden='true'></span>".html_safe, bot_on_path(bot), class: "btn btn-success", title: "Encender Bot", :confirm => "Seguro que quieres encender este bot?" %>
+							<% else %>
+								<%= link_to "<span class='glyphicon glyphicon-stop' aria-hidden='true'></span>".html_safe, bot_off_path(bot), class: "btn btn-danger", title: "Apagar Bot", :confirm => "Seguro que quieres apagar este bot?" %>
+							<% end %>
+							<%= link_to "<span class='glyphicon glyphicon-edit' aria-hidden='true'></span>".html_safe, bot_editar_path(bot), class: "btn btn-info", title: "Editar Bot" %>
+							<%= link_to "<span class='glyphicon glyphicon-trash' aria-hidden='true'></span>".html_safe, bot_eliminar_path(bot), class: "btn btn-danger", title: "Eliminar Bot", :confirm => "Seguro que quieres eliminar este bot?" %>
+						</div>
+					</div>
+				</td>
+			</tr>
+		<% end %>
+	</table>
 </div>
