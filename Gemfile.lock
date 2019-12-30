@@ -142,7 +142,7 @@ GEM
     execjs (2.7.0)
     factory_bot (5.1.1)
       activesupport (>= 4.2.0)
-    faker (2.9.0)
+    faker (2.10.0)
       i18n (>= 1.6, < 1.8)
     faraday (0.9.2)
       multipart-post (>= 1.2, < 3)
@@ -166,7 +166,7 @@ GEM
       guard (~> 2.1)
       guard-compat (~> 1.1)
       rspec (>= 2.99.0, < 4.0)
-    hashie (3.6.0)
+    hashie (3.5.7)
     http (3.3.0)
       addressable (~> 2.3)
       http-cookie (~> 1.0)
@@ -254,8 +254,8 @@ GEM
     oauth (0.5.4)
     octokit (3.8.0)
       sawyer (~> 0.6.0, >= 0.5.3)
-    omniauth (1.9.0)
-      hashie (>= 3.4.6, < 3.7.0)
+    omniauth (1.8.1)
+      hashie (>= 3.4.6, < 3.6.0)
       rack (>= 1.6.2, < 3)
     omniauth-oauth (1.1.0)
       oauth
@@ -308,8 +308,8 @@ GEM
       rspec-core (~> 3.9.0)
       rspec-expectations (~> 3.9.0)
       rspec-mocks (~> 3.9.0)
-    rspec-core (3.9.0)
-      rspec-support (~> 3.9.0)
+    rspec-core (3.9.1)
+      rspec-support (~> 3.9.1)
     rspec-expectations (3.9.0)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.9.0)
@@ -327,7 +327,7 @@ GEM
       rspec-expectations (~> 3.9.0)
       rspec-mocks (~> 3.9.0)
       rspec-support (~> 3.9.0)
-    rspec-support (3.9.0)
+    rspec-support (3.9.2)
     sass-rails (6.0.0)
       sassc-rails (~> 2.1, >= 2.1.1)
     sassc (2.2.1)
@@ -421,10 +421,10 @@ DEPENDENCIES
   mysql2
   negroku
   non-stupid-digest-assets
-  omniauth
+  omniauth (= 1.8.1)
   omniauth-twitter
   pry-rails
-  rails (> 6)
+  rails
   rspec-nc
   rspec-rails
   sass-rails

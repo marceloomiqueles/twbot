@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
-gem 'rails',									'>6'
+gem 'rails'
 gem 'bootstrap-sass'
-gem 'omniauth'
+gem 'omniauth',               '1.8.1'
 gem 'omniauth-twitter'
 gem 'sass-rails'
 gem 'bcrypt'
