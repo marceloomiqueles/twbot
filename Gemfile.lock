@@ -270,7 +270,7 @@ GEM
       pry (>= 0.10.4)
     puma (4.3.1)
       nio4r (~> 2.0)
-    rack (2.0.8)
+    rack (2.2.3)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
     rails (6.0.2.1)
@@ -421,7 +421,7 @@ DEPENDENCIES
   mysql2
   negroku
   non-stupid-digest-assets
-  omniauth (= 1.8.1)
+  omniauth
   omniauth-twitter
   pry-rails
   rails
